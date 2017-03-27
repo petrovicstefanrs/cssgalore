@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|images|css|js|fonts|scripts|doc|xml|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# Disable Directory Browsing
+Options All -Indexes
