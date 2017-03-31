@@ -6,19 +6,19 @@
 			    		<div class="col s12">
 			    			<h2 class="header">Multiple Columns</h2>
 			    			<span class="notice">Note: Extreme values may break in the preview.</span>
-			    			<span class="notice">Note: Negatve values are not allowed.</span>
+			    			<span class="notice">Note: Decimal values are allowed for Column Gap.</span>
 			    			<div class="divider"></div>
 			    		</div>
 			    	</div>
 			    	<div class="row"></div>
 					<div class="row">
 						<div class="input-field col l4 s12">
-							<input id="num_of_columns" type="text" name="num_of_columns">
-							<label for="num_of_columns"># of Columns</label>
+							<input id="num_of_columns" type="number" name="num_of_columns" class="validate" min="0">
+							<label for="num_of_columns" data-error="Decimal values are not allowed."># of Columns</label>
 						</div>
 						<div class="input-field col l4 s12">
-							<input id="column_gap" type="text" name="column_gap">
-							<label for="column_gap">Column Gap (px)</label>
+							<input id="column_gap" type="number" name="column_gap" class="validate" step="any" min="0">
+							<label for="column_gap" data-error="Negative values are not allowed.">Column Gap (px)</label>
 						</div>
 					</div>
 					<div class="row"></div>

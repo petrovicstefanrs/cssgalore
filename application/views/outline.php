@@ -6,15 +6,14 @@
 			    		<div class="col s12">
 			    			<h2 class="header">Outline</h2>
 			    			<span class="notice">Note: Extreme values may break in the preview.</span></br>
-			    			<span class="notice">Note: Outline Offset can have negative values.</span></br>
 			    			<div class="divider"></div>
 			    		</div>
 			    	</div>
 			    	<div class="row"></div>
 					<div class="row">
 						<div class="input-field col l4 s12">
-							<input id="outline_thicknes" type="text" name="outline_thicknes">
-							<label for="outline_thicknes">Outline Thickness (px)</label>
+							<input id="outline_thicknes" type="number" name="outline_thicknes" class="validate" min="0">
+							<label for="outline_thicknes" data-error="Decimal and negative values are not allowed.">Outline Thickness (px)</label>
 						</div>
 						<div class="input-field col l4 s12">
 							<select id="outline_style">
@@ -37,8 +36,8 @@
 							<label for="outline_color">Outline Color</label>
 						</div>
 						<div class="input-field col l4 s12">
-							<input id="outline_offset" type="text" name="outline_offset">
-							<label for="outline_offset">Outline Offset (px)</label>
+							<input id="outline_offset" type="number" name="outline_offset" class="validate">
+							<label for="outline_offset" data-error="Decimal values are not allowed.">Outline Offset (px)</label>
 						</div>
 					</div>
 					<div class="row"></div>

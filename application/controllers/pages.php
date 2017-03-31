@@ -116,6 +116,17 @@
 			$this->load->view('boxshadow');
 			$this->load->view('footer');
 		}
+
+		public function transform()
+		{
+			$this->data['section']='transform';
+			$this->data['presection']='div styling';
+			$this->load->view('head', $this->data);
+			$this->load->view('header', $this->data);
+			$this->load->view('nav', $this->data);
+			$this->load->view('transform');
+			$this->load->view('footer');
+		}
 	}
 
 ?>

@@ -42,6 +42,6 @@
 				    <a href="#!" class="breadcrumb"><?php echo $section?></a>
 				    <!--<a href="#!" class="breadcrumb">Third</a>-->
 				</div>
-		      	<h3 class="page_title"><?php echo $section?></h3>
+		      	<h2 class="page_title"><?php echo $section?></h2>
 		    </div>
 		</nav>

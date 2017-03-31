@@ -43,6 +43,11 @@ $(document).ready(function() {
 	    } : null;
 	}
 
+	/* STOP SCROOL CHANGE OF VALUES */
+	$(':input[type=number]').on('mousewheel', function(e){
+    	e.preventDefault();
+	});
+
 	/*Contact form send message AJAX*/
 	$(document).on('click','.contact_button',function () {
 		
@@ -192,7 +197,7 @@ $(document).ready(function() {
 				'text-shadow': hlength+'px '+vlength+'px'+color
 			});
 			$('#generated_code_text').html(
-				'<code><span>text-shadow:'+hlength+'px '+vlength+'px;</span></code>'
+				'<code><span>text-shadow:'+hlength+'px '+vlength+'px '+color+';</span></code>'
 			);
 		}
 		else{
@@ -759,11 +764,9 @@ $(document).ready(function() {
 		var opacity = $(this).val();
 
 		if (opacity>1) {
-			$(this).val(1);
 			opacity=1;
 		}
 		if (opacity<0) {
-			$(this).val(0);
 			opacity=0;
 		}
 
@@ -812,6 +815,308 @@ $(document).ready(function() {
 				'-moz-box-shadow': position+" "+hlength+"px "+vlength+"px "+blur+"px "+spread+"px "+color,
    				'-webkit-box-shadow': position+" "+hlength+"px "+vlength+"px "+blur+"px "+spread+"px "+color,
    				'box-shadow': position+" "+hlength+"px "+vlength+"px "+blur+"px "+spread+"px "+color
+			});
+		}
+	}
+
+	/* Transform Generator */
+
+	$(document).on('keyup','#transform_scale_x',function () {
+
+		var scalex = $(this).val();
+		var scaley = $('#transform_scale_y').val();
+		var translatex = $('#transform_translate_x').val();
+		var translatey = $('#transform_translate_y').val();
+		var skewx = $('#transform_skew_x').val();
+		var skewy = $('#transform_skew_y').val();
+		var rotate = $('#transform_rotate').val();
+		
+
+		if (!scalex) {
+			scalex=1;
+		}
+		if (!scaley) {
+			scaley=1;
+		}
+		if (!translatex) {
+			translatex=0;
+		}
+		if (!translatey) {
+			translatey=0;
+		}
+		if (!skewx) {
+			skewx=0;
+		}
+		if (!skewy) {
+			skewy=0;
+		}
+		if (!rotate) {
+			rotate=0;
+		}
+		
+		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
+
+	});
+	$(document).on('keyup','#transform_scale_y',function () {
+		var scalex = $('#transform_scale_x').val();
+		var scaley = $(this).val();
+		var translatex = $('#transform_translate_x').val();
+		var translatey = $('#transform_translate_y').val();
+		var skewx = $('#transform_skew_x').val();
+		var skewy = $('#transform_skew_y').val();
+		var rotate = $('#transform_rotate').val();
+		
+
+		if (!scalex) {
+			scalex=1;
+		}
+		if (!scaley) {
+			scaley=1;
+		}
+		if (!translatex) {
+			translatex=0;
+		}
+		if (!translatey) {
+			translatey=0;
+		}
+		if (!skewx) {
+			skewx=0;
+		}
+		if (!skewy) {
+			skewy=0;
+		}
+		if (!rotate) {
+			rotate=0;
+		}
+		
+		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
+
+	});
+	$(document).on('keyup','#transform_translate_x',function () {
+
+		var scalex = $('#transform_scale_x').val();
+		var scaley = $('#transform_scale_y').val();
+		var translatex = $(this).val();
+		var translatey = $('#transform_translate_y').val();
+		var skewx = $('#transform_skew_x').val();
+		var skewy = $('#transform_skew_y').val();
+		var rotate = $('#transform_rotate').val();
+		
+
+		if (!scalex) {
+			scalex=1;
+		}
+		if (!scaley) {
+			scaley=1;
+		}
+		if (!translatex) {
+			translatex=0;
+		}
+		if (!translatey) {
+			translatey=0;
+		}
+		if (!skewx) {
+			skewx=0;
+		}
+		if (!skewy) {
+			skewy=0;
+		}
+		if (!rotate) {
+			rotate=0;
+		}
+		
+		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
+
+	});
+	$(document).on('keyup','#transform_translate_y',function () {
+	
+		var scalex = $('#transform_scale_x').val();
+		var scaley = $('#transform_scale_y').val();
+		var translatex = $('#transform_translate_x').val();
+		var translatey = $(this).val();
+		var skewx = $('#transform_skew_x').val();
+		var skewy = $('#transform_skew_y').val();
+		var rotate = $('#transform_rotate').val();
+		
+
+		if (!scalex) {
+			scalex=1;
+		}
+		if (!scaley) {
+			scaley=1;
+		}
+		if (!translatex) {
+			translatex=0;
+		}
+		if (!translatey) {
+			translatey=0;
+		}
+		if (!skewx) {
+			skewx=0;
+		}
+		if (!skewy) {
+			skewy=0;
+		}
+		if (!rotate) {
+			rotate=0;
+		}
+		
+		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
+
+	});
+	$(document).on('keyup','#transform_skew_x',function () {
+
+		var scalex = $('#transform_scale_x').val();
+		var scaley = $('#transform_scale_y').val();
+		var translatex = $('#transform_translate_x').val();
+		var translatey = $('#transform_translate_y').val();
+		var skewx = $(this).val();
+		var skewy = $('#transform_skew_y').val();
+		var rotate = $('#transform_rotate').val();
+		
+
+		if (!scalex) {
+			scalex=1;
+		}
+		if (!scaley) {
+			scaley=1;
+		}
+		if (!translatex) {
+			translatex=0;
+		}
+		if (!translatey) {
+			translatey=0;
+		}
+		if (!skewx) {
+			skewx=0;
+		}
+		if (!skewy) {
+			skewy=0;
+		}
+		if (!rotate) {
+			rotate=0;
+		}
+		
+		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
+
+	});
+	$(document).on('keyup','#transform_skew_y',function () {
+
+		var scalex = $('#transform_scale_x').val();
+		var scaley = $('#transform_scale_y').val();
+		var translatex = $('#transform_translate_x').val();
+		var translatey = $('#transform_translate_y').val();
+		var skewx = $('#transform_skew_x').val();
+		var skewy = $(this).val();
+		var rotate = $('#transform_rotate').val();
+		
+
+		if (!scalex) {
+			scalex=1;
+		}
+		if (!scaley) {
+			scaley=1;
+		}
+		if (!translatex) {
+			translatex=0;
+		}
+		if (!translatey) {
+			translatey=0;
+		}
+		if (!skewx) {
+			skewx=0;
+		}
+		if (!skewy) {
+			skewy=0;
+		}
+		if (!rotate) {
+			rotate=0;
+		}
+		
+		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
+
+	});
+	$(document).on('keyup','#transform_rotate',function () {
+		
+		var scalex = $('#transform_scale_x').val();
+		var scaley = $('#transform_scale_y').val();
+		var translatex = $('#transform_translate_x').val();
+		var translatey = $('#transform_translate_y').val();
+		var skewx = $('#transform_skew_x').val();
+		var skewy = $('#transform_skew_y').val();
+		var rotate = $(this).val();
+		
+
+		if (!scalex) {
+			scalex=1;
+		}
+		if (!scaley) {
+			scaley=1;
+		}
+		if (!translatex) {
+			translatex=0;
+		}
+		if (!translatey) {
+			translatey=0;
+		}
+		if (!skewx) {
+			skewx=0;
+		}
+		if (!skewy) {
+			skewy=0;
+		}
+		if (!rotate) {
+			rotate=0;
+		}
+		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
+
+	});
+
+	function setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate) {
+		var csscode = "scaleX("+scalex+") scaleY("+scaley+") rotate("+rotate+"deg) translateX("+translatex+"px) translateY("+translatey+"px) skewX("+skewx+"deg) skewY("+skewy+"deg)";
+		$('.transform_preview').css({
+			'-moz-transform': csscode,
+			'-webkit-transform': csscode,
+			'transform': csscode
+		});
+
+
+		if ((!scalex && !scaley && !translatex && !translatey && !skewx && !skewy && !rotate) || (scalex==1 && scaley==1 && translatex==0 && translatey==0 && skewx==0 && skewy==0 && rotate==0)) {
+			$('#generated_code_text').html(
+				'There is no generated code'
+			);
+		}
+		else{
+
+			if (!scalex || scalex==1) {
+				csscode=csscode.replace(/scaleX\([a-zA-Z0-9\.]+\)/g,'');
+			}
+			if (!scaley || scaley==1) {
+				csscode=csscode.replace(/scaleY\([a-zA-Z0-9\.]+\)/g,'');
+			}
+			if (!translatex || translatex==0) {
+				csscode=csscode.replace(/translateX\([a-zA-Z0-9\.]+\)/g,'');
+			}
+			if (!translatey || translatey==0) {
+				csscode=csscode.replace(/translateY\([a-zA-Z0-9\.]+\)/g,'');
+			}
+			if (!skewx || skewx==0) {
+				csscode=csscode.replace(/skewX\([a-zA-Z0-9\.]+\)/g,'');
+			}
+			if (!skewy || skewy==0) {
+				csscode=csscode.replace(/skewY\([a-zA-Z0-9\.]+\)/g,'');
+			}
+			if (!rotate || rotate==0) {
+				csscode=csscode.replace(/rotate\([a-zA-Z0-9\.]+\)/g,'');
+			}
+
+			$('#generated_code_text').html(
+				'<code><span>-moz-transform:'+csscode+';</span></br><span>-webkit-transform:'+csscode+';</span></br><span>transform:'+csscode+';</span></code>' 
+			);
+			$('.transform_preview').css({
+				'-moz-transform': csscode,
+   				'-webkit-transform': csscode,
+   				'transform': csscode
 			});
 		}
 	}

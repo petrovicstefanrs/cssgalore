@@ -35,16 +35,16 @@
 				
 				$config['protocol'] = 'smtp';
 				$config['smtp_port'] = '465';
-				$config['smtp_host'] = 'SMTPHOST'; //SMTP HOST
-				$config['smtp_user'] = 'SMTPUSER'; //SMTP USER
-				$config['smtp_pass'] = 'SMTPPASS'; //SMTP PASS
+				$config['smtp_host'] = 'ssl://mail.petrovicstefan.rs';
+				$config['smtp_user'] = 'cssgalore@petrovicstefan.rs';
+				$config['smtp_pass'] = 'dpidesign1995';
 				$config['wordwrap'] = TRUE;
 
 				$this->email->initialize($config);
 
 				$this->email->from($mail, $name." ".$lastname);
-				$this->email->to('example@mail.com'); // RECIPIANT EMAIL
-				$this->email->cc('');
+				$this->email->to('cssgalore@petrovicstefan.rs');
+				$this->email->cc('dotperinchdesign@gmail.com');
 				
 				$this->email->subject('CSS Galore Contact Form');
 				$this->email->message($message);

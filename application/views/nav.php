@@ -21,8 +21,8 @@
 			    				<li class="bold" data-nav_page="border radius"><a href="<?php echo base_url();?>pages/borderradius" class="waves-effect waves-blue">Border Radius</a></li>
 			        			<li class="bold" data-nav_page="box shadow"><a href="<?php echo base_url();?>pages/boxshadow" class="waves-effect waves-blue">Box Shadow</a></li>
 			        			<li class="bold" data-nav_page="outline"><a href="<?php echo base_url();?>pages/outline" class="waves-effect waves-blue">Outline</a></li>
-			        			<!-- <li class="bold" data-nav_page="transition"><a href="about.html" class="waves-effect waves-blue">Transition</a></li>
-			        			<li class="bold" data-nav_page="transform"><a href="about.html" class="waves-effect waves-blue">Transform</a></li> -->
+			        			<!-- <li class="bold" data-nav_page="transition"><a href="about.html" class="waves-effect waves-blue">Transition</a></li>-->
+			        			<li class="bold" data-nav_page="transform"><a href="<?php echo base_url();?>pages/transform" class="waves-effect waves-blue">Transform</a></li> 
 			    			</ul>
 			    		</div>
 			    	</li>

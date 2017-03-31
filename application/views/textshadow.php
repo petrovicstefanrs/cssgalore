@@ -5,24 +5,24 @@
 			    	<div class="row">
 			    		<div class="col s12">
 			    			<h2 class="header">Text Shadow</h2>
-			    			<span class="notice">Note: Negative values are allowed for Horizontal & Vertical Length.</span>
+			    			<span class="notice">Note: Negative values are not allowed for Blur Radius.</span>
 			    			<div class="divider"></div>
 			    		</div>
 			    	</div>
 			    	<div class="row"></div>
 					<div class="row">
 						<div class="input-field col l4 s12">
-							<input id="text_shadow_hlength" type="text" name="text_shadow_hlength">
+							<input id="text_shadow_hlength" type="number" name="text_shadow_hlength" class="validate" step="any">
 							<label for="num_of_columns">Horizontal Length (px)</label>
 						</div>
 						<div class="input-field col l4 s12">
-							<input id="text_shadow_vlength" type="text" name="text_shadow_vlength">
+							<input id="text_shadow_vlength" type="number" name="text_shadow_vlength" class="validate" step="any">
 							<label for="column_gap">Vertical Length (px)</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col l4 s12">
-							<input id="text_shadow_blur" type="text" name="text_shadow_blur">
+							<input id="text_shadow_blur" type="number" name="text_shadow_blur" class="validate" min="0" step="any">
 							<label for="num_of_columns">Blur Radius (px)</label>
 						</div>
 						<div class="input-field col l4 s12">

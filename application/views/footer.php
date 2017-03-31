@@ -14,7 +14,7 @@
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/about">About</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/changelog">Change Log</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/contact">Contact</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">SiteMap</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>sitemap.xml">SiteMap</a></li>
                 </ul>
               </div>
               <div class="col l2 s4">
@@ -23,8 +23,8 @@
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/borderradius">Border Radius</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/boxshadow">Box Shadow</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/outline">Outline</a></li>
-                  <!-- <li><a class="grey-text text-lighten-3" href="#!">Transition</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Transform</a></li> -->
+                  <!-- <li><a class="grey-text text-lighten-3" href="#!">Transition</a></li> -->
+                  <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/transform">Transform</a></li>
                 </ul>
               </div>
               <div class="col l2 s4">

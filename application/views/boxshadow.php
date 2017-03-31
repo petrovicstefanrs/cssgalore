@@ -5,31 +5,30 @@
 			    	<div class="row">
 			    		<div class="col s12">
 			    			<h2 class="header">Box Shadow</h2>
-			    			<span class="notice">Note: Negative values are allowed for spread, horizontal & vertical length.</span></br>
-			    			<span class="notice">Note: Negative values are not allowed for blur radius.</span>
-			    			<span class="notice">Note: Opacity must be in 0-1 range.</span>
+			    			<span class="notice">Note: Decimal values are allowed.</span></br>
+			    			<span class="notice">Note: Negative values are not allowed only for Blur Radius.</span></br>
 			    			<div class="divider"></div>
 			    		</div>
 			    	</div>
 			    	<div class="row"></div>
 					<div class="row">
 						<div class="input-field col l4 s12">
-							<input id="box_shadow_horizontal_length" type="text" name="box_shadow_horizontal_length">
-							<label for="box_shadow_horizontal_length">Horizontal Length (px)</label>
+							<input id="box_shadow_horizontal_length" type="number" name="box_shadow_horizontal_length" class="validate" step="any">
+							<label for="box_shadow_horizontal_length" data-error="You must enter a number">Horizontal Length (px)</label>
 						</div>
 						<div class="input-field col l4 s12">
-							<input id="box_shadow_vertical_length" type="text" name="box_shadow_vertical_length">
-							<label for="box_shadow_vertical_length">Vertical Length (px)</label>
+							<input id="box_shadow_vertical_length" type="number" name="box_shadow_vertical_length">
+							<label for="box_shadow_vertical_length" data-error="You must enter a number">Vertical Length (px)</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col l4 s12">
-							<input id="box_shadow_blur_radius" type="text" name="box_shadow_blur_radius">
-							<label for="box_shadow_blur_radius">Blur Radius (px)</label>
+							<input id="box_shadow_blur_radius" type="number" name="box_shadow_blur_radius" class="validate" step="any" min="0">
+							<label for="box_shadow_blur_radius" data-error="You must enter a positive number">Blur Radius (px)</label>
 						</div>
 						<div class="input-field col l4 s12">
-							<input id="box_shadow_spread" type="text" name="box_shadow_spread">
-							<label for="box_shadow_spread">Spread (px)</label>
+							<input id="box_shadow_spread" type="number" name="box_shadow_spread" class="validate" step="any">
+							<label for="box_shadow_spread" data-error="You must enter a number">Spread (px)</label>
 						</div>
 					</div>
 					<div class="row">
@@ -52,8 +51,8 @@
 							<label for="box_shadow_color_type">Color Type</label>
 						</div>
 						<div class="input-field col l2 s12">
-							<input id="box_shadow_opacity" type="text" value=1 name="box_shadow_opacity" disabled>
-							<label for="box_shadow_opacity">Opacity (0-1)</label>
+							<input id="box_shadow_opacity" type="number" value=1 name="box_shadow_opacity" class="validate" step="any" min="0" max="1" disabled>
+							<label for="box_shadow_opacity" data-error="You must enter a number between 0 and 1">Opacity</label>
 						</div>
 					</div>
 					<div class="row"></div>
