@@ -23,8 +23,8 @@
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/borderradius">Border Radius</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/boxshadow">Box Shadow</a></li>
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/outline">Outline</a></li>
-                  <!-- <li><a class="grey-text text-lighten-3" href="#!">Transition</a></li> -->
                   <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/transform">Transform</a></li>
+                  <li><a class="grey-text text-lighten-3" href="<?php echo base_url();?>pages/transition">Transition</a></li>
                 </ul>
               </div>
               <div class="col l2 s4">
@@ -42,6 +42,12 @@
                 <div class="col l4 s12">
                   © <?php echo date('Y')?> <a class="grey-text text-lighten-4" href="http://www.petrovicstefan.rs">Petrović Stefan</a>, All rights reserved
                 </div>
+              </div>
+              <div class="row">
+                <div class="col l4 s12">
+                  Code licenced under <a class="grey-text text-lighten-4" href="https://cssgalore.mit-license.org/" target="_blank">MIT Licence</a>
+                </div>
+
                 <div class="col l4 offset-l4 s12 valign-wrapper social_buttons">
                   <!-- FB SHARE BUTTON -->
                   <div class="fb-share-button valign" data-href="http://cssgalore.petrovicstefan.rs" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcssgalore.petrovicstefan.rs%2F&amp;src=sdkpreparse">Share</a></div>

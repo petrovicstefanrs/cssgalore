@@ -127,6 +127,17 @@
 			$this->load->view('transform');
 			$this->load->view('footer');
 		}
+
+		public function transition()
+		{
+			$this->data['section']='transition';
+			$this->data['presection']='div styling';
+			$this->load->view('head', $this->data);
+			$this->load->view('header', $this->data);
+			$this->load->view('nav', $this->data);
+			$this->load->view('transition');
+			$this->load->view('footer');
+		}
 	}
 
 ?>

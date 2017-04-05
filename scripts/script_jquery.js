@@ -1,9 +1,11 @@
 $(document).ready(function() {
 
-	/*Initilize menu on smaller screens*/
+	/* ----------------------------------------------------------- Initilize menu on smaller screens ------------------------------------------------------------------ */
+
 	$(".button-collapse").sideNav();
 
-	/*Initilize clipboardjs*/
+	/* ---------------------------------------------------------------- Initilize clipboardjs ------------------------------------------------------------------------- */
+
 	var clipboard = new Clipboard('.copybtn');
 
 	clipboard.on('success', function(e) {
@@ -14,25 +16,32 @@ $(document).ready(function() {
 	    Materialize.toast('Press CTRL+C!', 4000);
 	});
 
-	/*Initilize modals*/
+	/* -------------------------------------------------------------------- Initilize modals -------------------------------------------------------------------------- */
+
 	$('.modal').modal();
 
-	/*Initilize select*/
+	/* -------------------------------------------------------------------- Initilize select -------------------------------------------------------------------------- */
+
 	$('select').material_select();
 
-	/*Initilize collapsible changelog*/
+	/* ------------------------------------------------------------- Initilize collapsible changelog ------------------------------------------------------------------ */
+
 	$('.collapsible').collapsible();
 
-	/*Set nav links to active page*/
+	/* ------------------------------------------------------------- Set nav links to active page --------------------------------------------------------------------- */
+	
 	if(section){
 		$('li[data-nav_page="'+section+'"]').addClass('active');
 	}
+
+	/* ----------------------------------------------------------- Set nav links to active subsection --------------------------------------------------------------------- */
 
 	if(typeof presection !== 'undefined' && presection){
 		$('li[data-nav_section="'+presection+'"]').addClass('active');
 	}
 
-	/* Hex Color to RGB Color Converter */
+	/* ------------------------------------------------------------- Hex Color to RGB Color Converter ------------------------------------------------------------------- */
+	
 	function hexToRgb(hex) {
 		var hexreg = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
 	    var result = hexreg.exec(hex);
@@ -43,12 +52,14 @@ $(document).ready(function() {
 	    } : null;
 	}
 
-	/* STOP SCROOL CHANGE OF VALUES */
+	/* ------------------------------------------------------------- Stop scroll from changeing input values ------------------------------------------------------------- */
+
 	$(':input[type=number]').on('mousewheel', function(e){
     	e.preventDefault();
 	});
 
-	/*Contact form send message AJAX*/
+	/* ------------------------------------------------------------- Send Message from Contact Form via AJAX ------------------------------------------------------------- */
+
 	$(document).on('click','.contact_button',function () {
 		
 		var firstname=$("input[name='contact_name']").val();
@@ -73,33 +84,27 @@ $(document).ready(function() {
 		}); 
 	});
 
-	/*Miltiple columns GENERATOR*/
+	/* --------------------------------------------------------- Create new style element node for transition preview -----------------------------------------------------------*/
+
+	var style = document.createElement('style');
+	document.getElementsByTagName('head')[0].appendChild(style);
+
+	/* --------------------------------------------------------- Hide nonactive choices for transition generator -----------------------------------------------------------*/
+
+	$('#transition_field_height, #transition_field_width, #transition_field_bgcolor, #transition_field_opacity').hide();
+
+	/* -------------------------------------------------------------------- Miltiple columns Generator -------------------------------------------------------------------- */
+
 	$(document).on('keyup','#num_of_columns',function () {
-		var numcol = $(this).val();
-		var colgap = $('#column_gap').val();
-
-		if(!numcol){
-			numcol=1;
-		}
-		if (!colgap) {
-			colgap=0;
-		}
-
-		$('.multiple_columns_preview').css({
-			'-moz-column-count': numcol,
-			'-moz-column-gap': colgap+"px",
-			'-webkit-column-count': numcol,
-			'-webkit-column-gap': colgap+"px",
-			'column-count': numcol,
-			'column-gap': colgap+"px"
-		});
-
-		setMultipleColumns(numcol,colgap);
-		
+		getMultipleColumns();
 	});
 
 	$(document).on('keyup','#column_gap',function () {
-		var colgap = $(this).val();
+		getMultipleColumns();
+	});
+
+	function getMultipleColumns() {
+		var colgap = $('#column_gap').val();
 		var numcol = $('#num_of_columns').val();
 
 		if(!numcol){
@@ -119,8 +124,7 @@ $(document).ready(function() {
 		});
 
 		setMultipleColumns(numcol,colgap);
-	});
-
+	}
 	function setMultipleColumns(numcol,colgap) {
 		if(!colgap || colgap==0){
 			if(!numcol || numcol==1){
@@ -148,41 +152,29 @@ $(document).ready(function() {
 		}
 	}
 
-	/*Text Shadow GENERATOR*/
+	/* -------------------------------------------------------------------- Text Shadow Generator -------------------------------------------------------------------- */
 
 	$(document).on('keyup','#text_shadow_hlength',function () {
-		var hlength = $(this).val();
-		var vlength = $('#text_shadow_vlength').val();
-		var blur = $('#text_shadow_blur').val();
-		var color = $('#text_shadow_color').val();
-
-		setTextShadow(hlength,vlength,blur,color);
+		getTextShadow();
 	});
 	$(document).on('keyup','#text_shadow_vlength',function () {
-		var hlength = $('#text_shadow_hlength').val();
-		var vlength = $(this).val();
-		var blur = $('#text_shadow_blur').val();
-		var color = $('#text_shadow_color').val();
-
-		setTextShadow(hlength,vlength,blur,color);
+		getTextShadow();
 	});
 	$(document).on('keyup','#text_shadow_blur',function () {
-		var hlength = $('#text_shadow_hlength').val();
-		var vlength = $('#text_shadow_vlength').val();
-		var blur = $(this).val();
-		var color = $('#text_shadow_color').val();
-
-		setTextShadow(hlength,vlength,blur,color);
+		getTextShadow();
 	});
 	$(document).on('change','#text_shadow_color',function () {
+		getTextShadow();
+	});
+
+	function getTextShadow() {
 		var hlength = $('#text_shadow_hlength').val();
 		var vlength = $('#text_shadow_vlength').val();
 		var blur = $('#text_shadow_blur').val();
-		var color = $(this).val();
+		var color = $('#text_shadow_color').val();
 
 		setTextShadow(hlength,vlength,blur,color);
-	});
-
+	}
 	function setTextShadow(hlength,vlength,blur,color) {
 		if (hlength && vlength && blur && color) {
 			$('.text_shadow_preview').css({
@@ -210,23 +202,24 @@ $(document).ready(function() {
 		}
 	}
 
-	/* Outiline Generator */
+	/* -------------------------------------------------------------------- Outiline Generator -------------------------------------------------------------------- */
 
 	$(document).on('keyup','#outline_thicknes',function () {
-		var thicknes = $(this).val();
-		var style = $('#outline_style').val();
-		var color = $('#outline_color').val();
-		var offset = $('#outline_offset').val();
-
-		if (!thicknes) {
-			thicknes=0;
-		}
-		setOutline(thicknes,style,color,offset);
-
+		getOutline();
 	});
 	$(document).on('change','#outline_style',function () {
+		getOutline();
+	});
+	$(document).on('change','#outline_color',function () {
+		getOutline();
+	});
+	$(document).on('keyup','#outline_offset',function () {
+		getOutline();
+	});
+
+	function getOutline() {
 		var thicknes = $('#outline_thicknes').val();
-		var style = $(this).val();
+		var style = $('#outline_style').val();
 		var color = $('#outline_color').val();
 		var offset = $('#outline_offset').val();
 
@@ -234,32 +227,16 @@ $(document).ready(function() {
 			style="solid";
 		}
 
-		setOutline(thicknes,style,color,offset);
-
-	});
-	$(document).on('change','#outline_color',function () {
-		var thicknes = $('#outline_thicknes').val();
-		var style = $('#outline_style').val();
-		var color = $(this).val();
-		var offset = $('#outline_offset').val();
-
-		setOutline(thicknes,style,color,offset);
-
-	});
-	$(document).on('keyup','#outline_offset',function () {
-		var thicknes = $('#outline_thicknes').val();
-		var style = $('#outline_style').val();
-		var color = $('#outline_color').val();
-		var offset = $(this).val();
-
 		if (!offset) {
 			offset=0;
 		}
 
+		if (!thicknes) {
+			thicknes=0;
+		}
+
 		setOutline(thicknes,style,color,offset);
-
-	});
-
+	}
 	function setOutline(thicknes,style,color,offset) {
 		if(thicknes && offset && style){
 			$('.outline_preview').css({
@@ -327,79 +304,26 @@ $(document).ready(function() {
 		}
 	}
 
-	/* Border Radius Generator */
+	/* -------------------------------------------------------------------- Border Radius Generator -------------------------------------------------------------------- */
 
 	$(document).on('keyup','#top_left_radius',function () {
-		var topleft = $(this).val();
-		var topright = $('#top_right_radius').val();
-		var bottomright = $('#bottom_right_radius').val();
-		var bottomleft = $('#bottom_left_radius').val();
-
-		if (!topleft) {
-			topleft=0;
-		}
-		if (!topright) {
-			topright=0;
-		}
-		if (!bottomright) {
-			bottomright=0;
-		}
-		if (!bottomleft) {
-			bottomleft=0;
-		}
-
-		setBorderRadius(topleft,topright,bottomright,bottomleft);
-
+		getBorderRadius();
 	});
 	$(document).on('keyup','#top_right_radius',function () {
-		var topleft = $('#top_left_radius').val();
-		var topright = $(this).val();
-		var bottomright = $('#bottom_right_radius').val();
-		var bottomleft = $('#bottom_left_radius').val();
-
-		if (!topleft) {
-			topleft=0;
-		}
-		if (!topright) {
-			topright=0;
-		}
-		if (!bottomright) {
-			bottomright=0;
-		}
-		if (!bottomleft) {
-			bottomleft=0;
-		}
-
-		setBorderRadius(topleft,topright,bottomright,bottomleft);
-
+		getBorderRadius();
 	});
 	$(document).on('keyup','#bottom_right_radius',function () {
-		var topleft = $('#top_left_radius').val();
-		var topright = $('#top_right_radius').val();
-		var bottomright = $(this).val();
-		var bottomleft = $('#bottom_left_radius').val();
-
-		if (!topleft) {
-			topleft=0;
-		}
-		if (!topright) {
-			topright=0;
-		}
-		if (!bottomright) {
-			bottomright=0;
-		}
-		if (!bottomleft) {
-			bottomleft=0;
-		}
-
-		setBorderRadius(topleft,topright,bottomright,bottomleft);
-
+		getBorderRadius();
 	});
 	$(document).on('keyup','#bottom_left_radius',function () {
+		getBorderRadius();		
+	});
+
+	function getBorderRadius() {
 		var topleft = $('#top_left_radius').val();
 		var topright = $('#top_right_radius').val();
 		var bottomright = $('#bottom_right_radius').val();
-		var bottomleft = $(this).val();
+		var bottomleft = $('#bottom_left_radius').val();
 
 		if (!topleft || topleft=="") {
 			topleft=0;
@@ -415,9 +339,7 @@ $(document).ready(function() {
 		}
 
 		setBorderRadius(topleft,topright,bottomright,bottomleft);
-
-	});
-
+	}
 	function setBorderRadius(topleft,topright,bottomright,bottomleft) {
 		$('.border_radius_preview').css({
 				'-webkit-border-radius': topleft+'px '+topright+'px '+bottomright+'px '+bottomleft+'px',
@@ -445,226 +367,34 @@ $(document).ready(function() {
 		}
 	}
 
-	/* Box Shadow Generator */
+	/* -------------------------------------------------------------------- Box Shadow Generator -------------------------------------------------------------------- */
 
 	$(document).on('keyup','#box_shadow_horizontal_length',function () {
-
-		var hlength = $(this).val();
-		var vlength = $('#box_shadow_vertical_length').val();
-		var blur = $('#box_shadow_blur_radius').val();
-		var spread = $('#box_shadow_spread').val();
-		var position = $('#box_shadow_position').val();
-		if (position=="outset") {
-			position="";
-		}
-		var opacity = $('#box_shadow_opacity').val();
-
-		if (opacity>1) {
-			opacity=1;
-		}
-		if (opacity<0) {
-			opacity=0;
-		}
-
-		var colortype = $('#box_shadow_color_type').val();
-		if (colortype=="hex") {
-			var color = $('#box_shadow_color').val();
-		}
-		else{
-			var rgb = hexToRgb($('#box_shadow_color').val());
-			var color = "rgba("+rgb.r+","+rgb.g+","+rgb.b+","+opacity+")";
-		}
-
-		if (!hlength) {
-			hlength=0;
-		}
-		if (!vlength) {
-			vlength=0;
-		}
-		if (!blur) {
-			blur=0;
-		}
-		if (!spread) {
-			spread=0;
-		}
-		
-		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
+		getBoxShadow();
 	});
 	$(document).on('keyup','#box_shadow_vertical_length',function () {
-		var hlength = $('#box_shadow_horizontal_length').val();
-		var vlength = $(this).val();
-		var blur = $('#box_shadow_blur_radius').val();
-		var spread = $('#box_shadow_spread').val();
-		var position = $('#box_shadow_position').val();
-		if (position=="outset") {
-			position="";
-		}
-		var opacity = $('#box_shadow_opacity').val();
-
-		if (opacity>1) {
-			opacity=1;
-		}
-		if (opacity<0) {
-			opacity=0;
-		}
-
-		var colortype = $('#box_shadow_color_type').val();
-		if (colortype=="hex") {
-			var color = $('#box_shadow_color').val();
-		}
-		else{
-			var rgb = hexToRgb($('#box_shadow_color').val());
-			var color = "rgba("+rgb.r+","+rgb.g+","+rgb.b+","+opacity+")";
-		}
-
-		if (!hlength) {
-			hlength=0;
-		}
-		if (!vlength) {
-			vlength=0;
-		}
-		if (!blur) {
-			blur=0;
-		}
-		if (!spread) {
-			spread=0;
-		}
-		
-
-		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
+		getBoxShadow();
 	});
 	$(document).on('keyup','#box_shadow_blur_radius',function () {
-		var hlength = $('#box_shadow_horizontal_length').val();
-		var vlength = $('#box_shadow_vertical_length').val();
-		var blur = $(this).val();
-		var spread = $('#box_shadow_spread').val();
-		var position = $('#box_shadow_position').val();
-		if (position=="outset") {
-			position="";
-		}
-		var opacity = $('#box_shadow_opacity').val();
-
-		if (opacity>1) {
-			opacity=1;
-		}
-		if (opacity<0) {
-			opacity=0;
-		}
-
-		var colortype = $('#box_shadow_color_type').val();
-		if (colortype=="hex") {
-			var color = $('#box_shadow_color').val();
-		}
-		else{
-			var rgb = hexToRgb($('#box_shadow_color').val());
-			var color = "rgba("+rgb.r+","+rgb.g+","+rgb.b+","+opacity+")";
-		}
-
-		if (!hlength) {
-			hlength=0;
-		}
-		if (!vlength) {
-			vlength=0;
-		}
-		if (!blur) {
-			blur=0;
-		}
-		if (!spread) {
-			spread=0;
-		}
-
-		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
+		getBoxShadow();
 	});
 	$(document).on('keyup','#box_shadow_spread',function () {
-		var hlength = $('#box_shadow_horizontal_length').val();
-		var vlength = $('#box_shadow_vertical_length').val();
-		var blur = $('#box_shadow_blur_radius').val();
-		var spread = $(this).val();
-		var position = $('#box_shadow_position').val();
-		if (position=="outset") {
-			position="";
-		}
-		var opacity = $('#box_shadow_opacity').val();
-
-		if (opacity>1) {
-			opacity=1;
-		}
-		if (opacity<0) {
-			opacity=0;
-		}
-
-		var colortype = $('#box_shadow_color_type').val();
-		if (colortype=="hex") {
-			var color = $('#box_shadow_color').val();
-		}
-		else{
-			var rgb = hexToRgb($('#box_shadow_color').val());
-			var color = "rgba("+rgb.r+","+rgb.g+","+rgb.b+","+opacity+")";
-		}
-
-		if (!hlength) {
-			hlength=0;
-		}
-		if (!vlength) {
-			vlength=0;
-		}
-		if (!blur) {
-			blur=0;
-		}
-		if (!spread) {
-			spread=0;
-		}
-
-		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
+		getBoxShadow();
 	});
 	$(document).on('change','#box_shadow_position',function () {
-		var hlength = $('#box_shadow_horizontal_length').val();
-		var vlength = $('#box_shadow_vertical_length').val();
-		var blur = $('#box_shadow_blur_radius').val();
-		var spread = $('#box_shadow_spread').val();
-		var position = $(this).val();
-		if (position=="outset") {
-			position="";
-		}
-		var opacity = $('#box_shadow_opacity').val();
-
-		if (opacity>1) {
-			opacity=1;
-		}
-		if (opacity<0) {
-			opacity=0;
-		}
-
-		var colortype = $('#box_shadow_color_type').val();
-		if (colortype=="hex") {
-			var color = $('#box_shadow_color').val();
-		}
-		else{
-			var rgb = hexToRgb($('#box_shadow_color').val());
-			var color = "rgba("+rgb.r+","+rgb.g+","+rgb.b+","+opacity+")";
-		}
-
-		if (!hlength) {
-			hlength=0;
-		}
-		if (!vlength) {
-			vlength=0;
-		}
-		if (!blur) {
-			blur=0;
-		}
-		if (!spread) {
-			spread=0;
-		}
-
-		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
+		getBoxShadow();
 	});
 	$(document).on('change','#box_shadow_color_type',function () {
+		getBoxShadow();
+	});
+	$(document).on('change','#box_shadow_color',function () {
+		getBoxShadow();
+	});
+	$(document).on('keyup','#box_shadow_opacity',function () {
+		getBoxShadow();
+	});
+
+	function getBoxShadow() {
 		var hlength = $('#box_shadow_horizontal_length').val();
 		var vlength = $('#box_shadow_vertical_length').val();
 		var blur = $('#box_shadow_blur_radius').val();
@@ -682,7 +412,7 @@ $(document).ready(function() {
 			opacity=0;
 		}
 
-		var colortype = $(this).val();
+		var colortype = $('#box_shadow_color_type').val();
 		if (colortype=="hex") {
 			$('#box_shadow_opacity').prop("disabled", true);
 			var color = $('#box_shadow_color').val();
@@ -707,95 +437,7 @@ $(document).ready(function() {
 		}
 
 		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
-	});
-	$(document).on('change','#box_shadow_color',function () {
-		var hlength = $('#box_shadow_horizontal_length').val();
-		var vlength = $('#box_shadow_vertical_length').val();
-		var blur = $('#box_shadow_blur_radius').val();
-		var spread = $('#box_shadow_spread').val();
-		var position = $('#box_shadow_position').val();
-		if (position=="outset") {
-			position="";
-		}
-		var opacity = $('#box_shadow_opacity').val();
-
-		if (opacity>1) {
-			opacity=1;
-		}
-		if (opacity<0) {
-			opacity=0;
-		}
-
-		var colortype = $('#box_shadow_color_type').val();
-		if (colortype=="hex") {
-			var color = $(this).val();
-		}
-		else{
-			var rgb = hexToRgb($(this).val());
-			var color = "rgba("+rgb.r+","+rgb.g+","+rgb.b+","+opacity+")";
-		}
-
-		if (!hlength) {
-			hlength=0;
-		}
-		if (!vlength) {
-			vlength=0;
-		}
-		if (!blur) {
-			blur=0;
-		}
-		if (!spread) {
-			spread=0;
-		}
-
-		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
-	});
-	$(document).on('keyup','#box_shadow_opacity',function () {
-		var hlength = $('#box_shadow_horizontal_length').val();
-		var vlength = $('#box_shadow_vertical_length').val();
-		var blur = $('#box_shadow_blur_radius').val();
-		var spread = $('#box_shadow_spread').val();
-		var position = $('#box_shadow_position').val();
-		if (position=="outset") {
-			position="";
-		}
-		var opacity = $(this).val();
-
-		if (opacity>1) {
-			opacity=1;
-		}
-		if (opacity<0) {
-			opacity=0;
-		}
-
-		var colortype = $('#box_shadow_color_type').val();
-		if (colortype=="hex") {
-			var color = $('#box_shadow_color').val();
-		}
-		else{
-			var rgb = hexToRgb($('#box_shadow_color').val());
-			var color = "rgba("+rgb.r+","+rgb.g+","+rgb.b+","+opacity+")";
-		}
-
-		if (!hlength) {
-			hlength=0;
-		}
-		if (!vlength) {
-			vlength=0;
-		}
-		if (!blur) {
-			blur=0;
-		}
-		if (!spread) {
-			spread=0;
-		}
-
-		setBoxShadow(hlength,vlength,blur,spread,position,color);
-
-	});
-
+	}
 	function setBoxShadow(hlength,vlength,blur,spread,position,color) {
 		if ((!hlength && !vlength) || (hlength==0 && vlength==0)) {
 			$('#generated_code_text').html(
@@ -819,195 +461,37 @@ $(document).ready(function() {
 		}
 	}
 
-	/* Transform Generator */
+	/* -------------------------------------------------------------------- Transform Generator -------------------------------------------------------------------- */
 
 	$(document).on('keyup','#transform_scale_x',function () {
-
-		var scalex = $(this).val();
-		var scaley = $('#transform_scale_y').val();
-		var translatex = $('#transform_translate_x').val();
-		var translatey = $('#transform_translate_y').val();
-		var skewx = $('#transform_skew_x').val();
-		var skewy = $('#transform_skew_y').val();
-		var rotate = $('#transform_rotate').val();
-		
-
-		if (!scalex) {
-			scalex=1;
-		}
-		if (!scaley) {
-			scaley=1;
-		}
-		if (!translatex) {
-			translatex=0;
-		}
-		if (!translatey) {
-			translatey=0;
-		}
-		if (!skewx) {
-			skewx=0;
-		}
-		if (!skewy) {
-			skewy=0;
-		}
-		if (!rotate) {
-			rotate=0;
-		}
-		
-		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
-
+		getTransform();
 	});
 	$(document).on('keyup','#transform_scale_y',function () {
-		var scalex = $('#transform_scale_x').val();
-		var scaley = $(this).val();
-		var translatex = $('#transform_translate_x').val();
-		var translatey = $('#transform_translate_y').val();
-		var skewx = $('#transform_skew_x').val();
-		var skewy = $('#transform_skew_y').val();
-		var rotate = $('#transform_rotate').val();
-		
-
-		if (!scalex) {
-			scalex=1;
-		}
-		if (!scaley) {
-			scaley=1;
-		}
-		if (!translatex) {
-			translatex=0;
-		}
-		if (!translatey) {
-			translatey=0;
-		}
-		if (!skewx) {
-			skewx=0;
-		}
-		if (!skewy) {
-			skewy=0;
-		}
-		if (!rotate) {
-			rotate=0;
-		}
-		
-		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
-
+		getTransform();
 	});
 	$(document).on('keyup','#transform_translate_x',function () {
-
-		var scalex = $('#transform_scale_x').val();
-		var scaley = $('#transform_scale_y').val();
-		var translatex = $(this).val();
-		var translatey = $('#transform_translate_y').val();
-		var skewx = $('#transform_skew_x').val();
-		var skewy = $('#transform_skew_y').val();
-		var rotate = $('#transform_rotate').val();
-		
-
-		if (!scalex) {
-			scalex=1;
-		}
-		if (!scaley) {
-			scaley=1;
-		}
-		if (!translatex) {
-			translatex=0;
-		}
-		if (!translatey) {
-			translatey=0;
-		}
-		if (!skewx) {
-			skewx=0;
-		}
-		if (!skewy) {
-			skewy=0;
-		}
-		if (!rotate) {
-			rotate=0;
-		}
-		
-		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
-
+		getTransform();
 	});
 	$(document).on('keyup','#transform_translate_y',function () {
-	
-		var scalex = $('#transform_scale_x').val();
-		var scaley = $('#transform_scale_y').val();
-		var translatex = $('#transform_translate_x').val();
-		var translatey = $(this).val();
-		var skewx = $('#transform_skew_x').val();
-		var skewy = $('#transform_skew_y').val();
-		var rotate = $('#transform_rotate').val();
-		
-
-		if (!scalex) {
-			scalex=1;
-		}
-		if (!scaley) {
-			scaley=1;
-		}
-		if (!translatex) {
-			translatex=0;
-		}
-		if (!translatey) {
-			translatey=0;
-		}
-		if (!skewx) {
-			skewx=0;
-		}
-		if (!skewy) {
-			skewy=0;
-		}
-		if (!rotate) {
-			rotate=0;
-		}
-		
-		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
-
+		getTransform();
 	});
 	$(document).on('keyup','#transform_skew_x',function () {
-
-		var scalex = $('#transform_scale_x').val();
-		var scaley = $('#transform_scale_y').val();
-		var translatex = $('#transform_translate_x').val();
-		var translatey = $('#transform_translate_y').val();
-		var skewx = $(this).val();
-		var skewy = $('#transform_skew_y').val();
-		var rotate = $('#transform_rotate').val();
-		
-
-		if (!scalex) {
-			scalex=1;
-		}
-		if (!scaley) {
-			scaley=1;
-		}
-		if (!translatex) {
-			translatex=0;
-		}
-		if (!translatey) {
-			translatey=0;
-		}
-		if (!skewx) {
-			skewx=0;
-		}
-		if (!skewy) {
-			skewy=0;
-		}
-		if (!rotate) {
-			rotate=0;
-		}
-		
-		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
-
+		getTransform();
 	});
 	$(document).on('keyup','#transform_skew_y',function () {
+		getTransform();
+	});
+	$(document).on('keyup','#transform_rotate',function () {
+		getTransform();
+	});
 
+	function getTransform() {
 		var scalex = $('#transform_scale_x').val();
 		var scaley = $('#transform_scale_y').val();
 		var translatex = $('#transform_translate_x').val();
 		var translatey = $('#transform_translate_y').val();
 		var skewx = $('#transform_skew_x').val();
-		var skewy = $(this).val();
+		var skewy = $('#transform_skew_y').val();
 		var rotate = $('#transform_rotate').val();
 		
 
@@ -1032,46 +516,8 @@ $(document).ready(function() {
 		if (!rotate) {
 			rotate=0;
 		}
-		
 		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
-
-	});
-	$(document).on('keyup','#transform_rotate',function () {
-		
-		var scalex = $('#transform_scale_x').val();
-		var scaley = $('#transform_scale_y').val();
-		var translatex = $('#transform_translate_x').val();
-		var translatey = $('#transform_translate_y').val();
-		var skewx = $('#transform_skew_x').val();
-		var skewy = $('#transform_skew_y').val();
-		var rotate = $(this).val();
-		
-
-		if (!scalex) {
-			scalex=1;
-		}
-		if (!scaley) {
-			scaley=1;
-		}
-		if (!translatex) {
-			translatex=0;
-		}
-		if (!translatey) {
-			translatey=0;
-		}
-		if (!skewx) {
-			skewx=0;
-		}
-		if (!skewy) {
-			skewy=0;
-		}
-		if (!rotate) {
-			rotate=0;
-		}
-		setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate);
-
-	});
-
+	}
 	function setTransform(scalex,scaley,translatex,translatey,skewx,skewy,rotate) {
 		var csscode = "scaleX("+scalex+") scaleY("+scaley+") rotate("+rotate+"deg) translateX("+translatex+"px) translateY("+translatey+"px) skewX("+skewx+"deg) skewY("+skewy+"deg)";
 		$('.transform_preview').css({
@@ -1118,6 +564,204 @@ $(document).ready(function() {
    				'-webkit-transform': csscode,
    				'transform': csscode
 			});
+		}
+	}
+
+	/* -------------------------------------------------------------------- Transition Generator -------------------------------------------------------------------- */
+
+	$('#transition_field_'+$('#transition_transition_property').val()).show();	// All options are hidden by default this shows active option
+
+	$(document).on('change', '#transition_transition_property', function () { 	// Show chosen options hide others
+		$("[id^=transition_field_]").hide();
+		$('#transition_field_'+$(this).val()).show();
+	})
+
+	var bgflag=false; // Chceks if color was changed
+
+	// HEIGHT TRANSITION //
+
+	$(document).on('change','#transition_height_timing',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_height_height',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_height_duration',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_height_delay',function () {
+		getTransition();
+	});
+	//  WIDTH TRANSITION //
+	$(document).on('change','#transition_width_timing',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_width_width',function () {
+		getTransition();		
+	});
+	$(document).on('keyup','#transition_width_duration',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_width_delay',function () {
+		getTransition();
+	});
+	// BACKGROUND COLOR TRANSITION //
+	$(document).on('change','#transition_bgcolor_timing',function () {
+		getTransition();
+	});
+	$(document).on('change','#transition_bgcolor_color',function () {
+		bgflag=true;
+		getTransition();
+	});
+	$(document).on('keyup','#transition_bgcolor_duration',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_bgcolor_delay',function () {
+		getTransition();
+	});
+	//  OPACITY TRANSITION //
+	$(document).on('change','#transition_opacity_timing',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_opacity_opacity',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_opacity_duration',function () {
+		getTransition();
+	});
+	$(document).on('keyup','#transition_opacity_delay',function () {
+		getTransition();
+	});
+
+	function getTransition() {
+		var otiming = $('#transition_opacity_timing').val();
+		var oopacity = $('#transition_opacity_opacity').val();
+		var oduration = $('#transition_opacity_duration').val();
+		var odelay = $('#transition_opacity_delay').val();
+
+		var htiming = $('#transition_height_timing').val();
+		var hhight = $('#transition_height_height').val();
+		var hduration = $('#transition_height_duration').val();
+		var hdelay = $('#transition_height_delay').val();
+
+		var wtiming = $('#transition_width_timing').val();
+		var wwidth = $('#transition_width_width').val();
+		var wduration = $('#transition_width_duration').val();
+		var wdelay = $('#transition_width_delay').val();
+
+		var bgtiming = $('#transition_bgcolor_timing').val();
+		var bgcolor = $('#transition_bgcolor_color').val();
+		var bgduration = $('#transition_bgcolor_duration').val();
+		var bgdelay = $('#transition_bgcolor_delay').val();
+
+		if (!oduration) {
+			oduration=0;
+		}
+		if (!odelay) {
+			odelay=0;
+		}
+
+		if (!oopacity || oopacity==1) {
+			oopacity=false;
+		}
+
+		if (oopacity>1) {
+			oopacity=1;
+		}
+		if (oopacity<0) {
+			oopacity=0;
+		}
+
+		if (!hduration) {
+			hduration=0;
+		}
+		if (!hdelay) {
+			hdelay=0;
+		}
+		if (!hhight || hhight==="") {
+			hhight=false;
+		}
+		
+		if (!wduration) {
+			wduration=0;
+		}
+		if (!wdelay) {
+			wdelay=0;
+		}
+		if (!wwidth || wwidth==="") {
+			wwidth=false;
+		}
+
+		if (!bgduration) {
+			bgduration=0;
+		}
+		if (!bgdelay) {
+			bgdelay=0;
+		}
+		
+		setTransition(htiming,hhight,hduration,hdelay,wtiming,wwidth,wduration,wdelay,bgtiming,bgcolor,bgduration,bgdelay,otiming,oopacity,oduration,odelay);
+	}
+	function setTransition(htiming,hhight,hduration,hdelay,wtiming,wwidth,wduration,wdelay,bgtiming,bgcolor,bgduration,bgdelay,otiming,oopacity,oduration,odelay) {
+		if (hhight) {
+			var h_transition="height "+hduration+"s "+htiming+" "+hdelay+"s";
+			var h_transition_hover="height: "+hhight+"px;";
+		}
+		else{
+			var h_transition="";
+			var h_transition_hover="";
+		}
+		if (wwidth) {
+			var w_transition="width "+wduration+"s "+wtiming+" "+wdelay+"s";
+			var w_transition_hover="width: "+wwidth+"px;";
+		}
+		else{
+			var w_transition="";
+			var w_transition_hover="";
+		}
+		if (oopacity) {
+			var o_transition="opacity "+oduration+"s "+otiming+" "+odelay+"s";
+			var o_transition_hover="opacity: "+oopacity+";";
+		}
+		else{
+			var o_transition="";
+			var o_transition_hover="";
+		}
+		if (bgflag) {
+			var bg_transition="background-color "+bgduration+"s "+bgtiming+" "+bgdelay+"s";
+			var bg_transition_hover="background-color: "+bgcolor+";";
+		}
+		else{
+			var bg_transition="";
+			var bg_transition_hover="";
+		}
+		
+		var csscode= h_transition+", "+w_transition+", "+o_transition+", "+bg_transition;
+		csscode=csscode.replace(/^([\,\s]+)|(\s\,\W)|([\,\s]+)$/g," ");
+		var csscodehover= h_transition_hover+w_transition_hover+o_transition_hover+bg_transition_hover;
+		var css = '.transition_preview{ -moz-transition:'+csscode+';-webkit-transition:'+csscode+';o-transition:'+csscode+';transition:'+csscode+';} .transition_preview:hover{ '+csscodehover+' }';
+		csscodehover=csscodehover.replace(/\;(?=[^;]*\;)/g,";</br>");
+
+		/* If created style node has child node with a value update else create child node and assign value */
+
+		if (style.childNodes[0]) {		
+		    style.childNodes[0].nodeValue = css;
+		    console.log(css);
+		} else {
+		    style.appendChild(document.createTextNode(css));
+		}
+		
+		if (!hhight && !wwidth && !oopacity && !bgflag) {
+			$('#generated_code_text').html(
+				'There is no generated code'
+			);
+		}
+		else{
+
+			$('#generated_code_text').html(
+				'<code>.selector{</br><span>-moz-transition:'+csscode+';</span></br><span>-webkit-transition:'+csscode
+				+';</span></br><span>-o-transition:'+csscode+';</span></br><span>transition:'+csscode+';</span></br>}</code></br>'+
+				'<code>.selector:hover{</br><span>'+csscodehover+'</span></br>}</code>'
+			);
 		}
 	}
 })

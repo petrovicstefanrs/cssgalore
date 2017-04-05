@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="css/sitemapStyle.xsl"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/about</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/borderradius</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/boxshadow</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/outline</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/transform</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/transition</loc>
+  <lastmod>2017-04-05</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/textshadow</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/multiplecolumns</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/changelog</loc>
+  <lastmod>2017-04-05</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/contact</loc>
+  <lastmod>2017-03-30</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+</urlset>

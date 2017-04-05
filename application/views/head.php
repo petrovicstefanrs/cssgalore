@@ -16,6 +16,8 @@
 
 	<!--JQuery CDN-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	
 
 	<script type="text/javascript">
 		base_url = '<?php echo base_url() ?>';
@@ -86,6 +88,9 @@
 	<meta name="twitter:title" content="CSS Galore | CSS3 Generator" />
 	<meta name="twitter:description" content="CSS Galore is a collection of CSS3 code generator tools built to satisfy all your CSS needs." />
 	<meta name="twitter:image" content="<?php echo base_url()?>images/fbpreview.png" />
+
+	<!-- Bing meta tags -->
+	<meta name="msvalidate.01" content="B42A74498A71B9699514730ED05D7FF5" />
 
 </head>
 <body>

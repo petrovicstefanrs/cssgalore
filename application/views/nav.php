@@ -15,19 +15,19 @@
 			<li class="no-padding">
 				<ul class="collapsible collapsible-accordion" data-collapsible="accordion">
 			    	<li class="bold" data-nav_section="div styling">
-			    		<a class="collapsible-header waves-effect waves-blue">Div Styling</a>
+			    		<a class="collapsible-header waves-effect waves-blue">Div Styling <i class="tiny material-icons">arrow_drop_down</i></a>
 			    		<div id="div-generators" class="collapsible-body no-padding">
 			    			<ul>
 			    				<li class="bold" data-nav_page="border radius"><a href="<?php echo base_url();?>pages/borderradius" class="waves-effect waves-blue">Border Radius</a></li>
 			        			<li class="bold" data-nav_page="box shadow"><a href="<?php echo base_url();?>pages/boxshadow" class="waves-effect waves-blue">Box Shadow</a></li>
 			        			<li class="bold" data-nav_page="outline"><a href="<?php echo base_url();?>pages/outline" class="waves-effect waves-blue">Outline</a></li>
-			        			<!-- <li class="bold" data-nav_page="transition"><a href="about.html" class="waves-effect waves-blue">Transition</a></li>-->
 			        			<li class="bold" data-nav_page="transform"><a href="<?php echo base_url();?>pages/transform" class="waves-effect waves-blue">Transform</a></li> 
+			        			<li class="bold" data-nav_page="transition"><a href="<?php echo base_url();?>pages/transition" class="waves-effect waves-blue">Transition</a></li>
 			    			</ul>
 			    		</div>
 			    	</li>
 			    	<li class="bold" data-nav_section="text styling">
-			    		<a class="collapsible-header waves-effect waves-blue">Text Styling</a>
+			    		<a class="collapsible-header waves-effect waves-blue">Text Styling <i class="tiny material-icons">arrow_drop_down</i></a>
 			    		<div id="text-generators" class="collapsible-body no-padding">
 			    			<ul>
 			    				<li class="bold" data-nav_page="text shadow"><a href="<?php echo base_url();?>pages/textshadow" class="waves-effect waves-blue">Text Shadow</a></li>

@@ -82,6 +82,14 @@ input[type=number]{
 
 /* CUSTOM LABEL END*/
 
+/* TINY MATERIAL ICON CUSTOM */
+
+.tiny{
+	float: right !important;
+}
+
+/* TINY MATERIAL ICON CUSTOM END */
+
 /* CUSTOM CODE TAG */
 
 code{
@@ -178,6 +186,10 @@ code{
 
 .side-nav li.active>a {
     color: white;
+}
+
+.side-nav li.active>a>i {
+    color: white !important;
 }
 /* MENU END */
 
@@ -569,6 +581,31 @@ footer{
 }
 
 /* Transform END */
+
+/* Transform */
+
+.transition_preview{
+	width: 300px;
+	padding: 50px;
+	margin: 50px auto;
+	background-color: #ffffff;
+	opacity: 1;
+	height: 125px;
+	overflow: hidden;
+	border: 2px solid #3F51B5;
+	backface-visibility: hidden;
+	text-align: center;
+}
+
+@media only screen and (max-width : 992px) {
+	.transition_preview{
+		width: 150px;
+		width: 62.5px;
+		font-size: 12px;
+	}
+}
+
+/* Transition END */
 
 /* GENERATE BUTTON */
 
