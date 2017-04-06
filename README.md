@@ -22,7 +22,7 @@
 
 ---
 
-Even though there are a bunch of CSS code generators out there, I made this as a <b><i>self-improvement project</i></b> with the goal to learn some new stuff. That being said, if you have any <b>tips</b>, find any <b>bugs</b>, have any <b>ideas</b> on how to <b>improve</b> these tools please feel free to speak your mind. Any input is appreaciated, especially if it's <b><i>constructive critisism!</i></b>
+<p align="center">Even though there are a bunch of CSS code generators out there, I made this as a <b><i>self-improvement project</i></b> with the goal to learn some new stuff. That being said, if you have any <b>tips</b>, find any <b>bugs</b>, have any <b>ideas</b> on how to <b>improve</b> these tools please feel free to speak your mind. Any input is appreaciated, especially if it's <b><i>constructive critisism!</i></b></p>
 
 ---
 
@@ -42,4 +42,4 @@ Even though there are a bunch of CSS code generators out there, I made this as a
     
       Add the necessary email information if you wish to recive emails via contact form
   
-  The commented lines need to be changed
+      The commented lines need to be changed
