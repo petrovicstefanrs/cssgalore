@@ -32,14 +32,14 @@ Even though there are a bunch of CSS code generators out there, I made this as a
 
 * Locate application/config/config.php
 
-  Define base_url for the project
+      Define base_url for the project
   
 * Locate application/config/database.php
  
-  Setup database information(used only for change log on official website)
+      Setup database information(used only for change log on official website)
   
 * Locate application/controllers/contact.php
+    
+      Add the necessary email information if you wish to recive emails via contact form
   
-  Add the necessary email information if you wish to recive emails via contact form
-  
- 	The commented lines need to be changed
+  The commented lines need to be changed
