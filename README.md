@@ -1,4 +1,4 @@
-# CSS GALORE
+<h1 align="center"><b>CSS</b> GALORE</h1>
 
 <p align="center">
 <a href="http://cssgalore.petrovicstefan.rs" target="_blank">cssgalore.petrovicstefan.rs</a>
@@ -22,24 +22,24 @@
 
 ---
 
-Even though there are a bunch of css generators out there, I made this as a self-improvement project with the goal to learn some new stuff. That being said, if you have any tips, find any bugs, have any ideas on how to improve these tools please feel free to speak your mind. Any input is appreaciated, especially if it's constructive critisism!
+Even though there are a bunch of CSS code generators out there, I made this as a <b><i>self-improvement project</i></b> with the goal to learn some new stuff. That being said, if you have any <b>tips</b>, find any <b>bugs</b>, have any <b>ideas</b> on how to <b>improve</b> these tools please feel free to speak your mind. Any input is appreaciated, especially if it's <b><i>constructive critisism!</i></b>
 
 ---
 
 ## How to use:
 
--Download or fork the repository
+* Download or fork the repository
 
--Locate application/config/config.php
+* Locate application/config/config.php
 
->Define base_url for the project
+  Define base_url for the project
   
--Locate application/config/database.php
+* Locate application/config/database.php
  
->Setup database information(used only for change log on official website)
+  Setup database information(used only for change log on official website)
   
--Locate application/controllers/contact.php
+* Locate application/controllers/contact.php
   
- >Add the necessary email information if you wish to recive emails via contact form
+  Add the necessary email information if you wish to recive emails via contact form
   
  	The commented lines need to be changed
