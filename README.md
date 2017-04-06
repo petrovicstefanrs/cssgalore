@@ -17,14 +17,16 @@
 </p>
 
 <p align="center">
-CSSGalore is a web based CSS3 code generator for most commonly used styling options. It generates the code using user input, 	with live preview of the changes. CSSGalore is written using JQuery, CodeIgniter and Materialize Framework. Some functionalities are powerd by clipboardjs and [jscolor]:(http://jscolor.com/).
+CSSGalore is a web based CSS3 code generator for most commonly used styling options. It generates the code using user input, 	with live preview of the changes. CSSGalore is written using JQuery, CodeIgniter and Materialize Framework. Some functionalities are powered by <a href="https://clipboardjs.com/">ClipboardJS</a> and <a href="http://jscolor.com/">JsColor</a>.
 </p>
 
 ---
 
 Even though there are a bunch of css generators out there, I made this as a self-improvement project with the goal to learn some new stuff. That being said, if you have any tips, find any bugs, have any ideas on how to improve these tools please feel free to speak your mind. Any input is appreaciated, especially if it's constructive critisism!
 
-How to use:
+---
+
+## How to use:
 
 -Download or fork the repository
 
