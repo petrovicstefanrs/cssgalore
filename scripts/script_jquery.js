@@ -93,6 +93,10 @@ $(document).ready(function() {
 
 	$('#transition_field_height, #transition_field_width, #transition_field_bgcolor, #transition_field_opacity').hide();
 
+	/* --------------------------------------------------------- Hide nonactive choices for gradient generator -----------------------------------------------------------*/
+
+	$('#gradient_field_linear, #gradient_field_radial').hide();
+
 	/* -------------------------------------------------------------------- Miltiple columns Generator -------------------------------------------------------------------- */
 
 	$(document).on('keyup','#num_of_columns',function () {
@@ -745,7 +749,7 @@ $(document).ready(function() {
 
 		if (style.childNodes[0]) {		
 		    style.childNodes[0].nodeValue = css;
-		    console.log(css);
+		    //console.log(css);
 		} else {
 		    style.appendChild(document.createTextNode(css));
 		}
@@ -762,6 +766,104 @@ $(document).ready(function() {
 				+';</span></br><span>-o-transition:'+csscode+';</span></br><span>transition:'+csscode+';</span></br>}</code></br>'+
 				'<code>.selector:hover{</br><span>'+csscodehover+'</span></br>}</code>'
 			);
+		}
+	}
+
+	/* -------------------------------------------------------------------- Gradient Generator -------------------------------------------------------------------- */
+
+	$('#gradient_field_'+$('#gradient_style').val()).show();	// All options are hidden by default this shows active option
+
+	$(document).on('change', '#gradient_style', function () { 	// Show chosen options hide others
+		$("[id^=gradient_field_]").hide();
+		$('#gradient_field_'+$(this).val()).show();
+		getGradient();
+	});
+
+	if(section==="gradient"){
+		getGradient();
+	}
+
+	$(document).on('change','#gradient_start_color_linear',function () {
+		getGradient();
+	});
+	$(document).on('change','#gradient_end_color_linear',function () {
+		getGradient();
+	});
+	$(document).on('mousemove','#gradient_angle',function () {
+		getGradient();
+	});
+	$(document).on('change','#gradient_start_color_radial',function () {
+		getGradient();
+	});
+	$(document).on('change','#gradient_end_color_radial',function () {
+		getGradient();
+	});
+	$(document).on('mousemove','#gradient_start_size',function () {
+		getGradient();
+	});
+	$(document).on('mousemove','#gradient_end_size',function () {
+		getGradient();
+	});
+
+	function getGradient() {
+		var linear_start_color=$('#gradient_start_color_linear').val();
+		var linear_end_color=$('#gradient_end_color_linear').val();
+		var linear_angle=$('#gradient_angle').val();
+
+		var radial_start_color=$('#gradient_start_color_radial').val();
+		var radial_start_color_size=$('#gradient_start_size').val();
+		var radial_end_color=$('#gradient_end_color_radial').val();
+		var radial_end_color_size=$('#gradient_end_size').val();
+
+		setGradient(linear_start_color,linear_end_color,linear_angle,radial_start_color,radial_start_color_size,radial_end_color,radial_end_color_size);
+	}
+	function setGradient(linear_start_color,linear_end_color,linear_angle,radial_start_color,radial_start_color_size,radial_end_color,radial_end_color_size) {
+
+		switch ($('#gradient_style').val()){
+			case "linear":
+				var csscode=linear_angle+"deg ,"+linear_start_color+", "+linear_end_color;
+
+				$('.gradient_preview').css({
+					/*'background': linear_start_color,
+					'background': "-webkit-linear-gradient("+csscode+")",
+					'background': "-moz-linear-gradient("+csscode+")",
+					'background': "-o-linear-gradient("+csscode+")",*/
+					'background': "linear-gradient("+csscode+")"
+				});
+
+				$('#generated_code_text').html(
+					'<code>background: '+linear_start_color+';</span></br><span>background: -webkit-linear-gradient('+csscode
+					+');</span></br><span>background: -moz-linear-gradient('+csscode
+					+');</span></br><span>background: -o-linear-gradient('+csscode
+					+');</span></br><span>background: linear-gradient('+csscode+');</span></code>'
+				);
+
+				break;
+
+			case "radial":
+				var csscode=radial_start_color+" "+radial_start_color_size+"%, "+radial_end_color+" "+radial_end_color_size+"%";
+
+				$('.gradient_preview').css({
+					/*'background': radial_start_color,
+					'background': "-webkit-radial-gradient("+csscode+")",
+					'background': "-moz-radial-gradient("+csscode+")",
+					'background': "-o-radial-gradient("+csscode+")",*/
+					'background': "radial-gradient("+csscode+")"
+				});
+
+				$('#generated_code_text').html(
+					'<code>background: '+radial_start_color+';</span></br><span>background: -webkit-radial-gradient('+csscode
+					+');</span></br><span>background: -moz-radial-gradient('+csscode
+					+');</span></br><span>background: -o-radial-gradient('+csscode
+					+');</span></br><span>background: radial-gradient('+csscode+');</span></code>'
+				);
+				break;
+
+			default:	
+				$('#generated_code_text').html(
+					'There is no generated code'
+				);
+				break;
 		}
 	}
 })

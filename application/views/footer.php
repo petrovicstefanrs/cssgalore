@@ -50,7 +50,7 @@
 
                 <div class="col l4 offset-l4 s12 valign-wrapper social_buttons">
                   <!-- FB SHARE BUTTON -->
-                  <div class="fb-share-button valign" data-href="http://cssgalore.petrovicstefan.rs" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcssgalore.petrovicstefan.rs%2F&amp;src=sdkpreparse">Share</a></div>
+                  <div class="fb-share-button valign" data-href="https://cssgalore.petrovicstefan.rs" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcssgalore.petrovicstefan.rs%2F&amp;src=sdkpreparse">Share</a></div>
                   <!-- Twitter Twitt -->
                   <a class="twitter-share-button valign"
                     href="https://twitter.com/intent/tweet?text=CSS%20Galore,%20CSS3%20Generator.%20All%20your%20CSS3%20needs%20in%20one%20place.">

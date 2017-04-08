@@ -35,6 +35,14 @@
 			    			</ul>
 			    		</div>
 			    	</li>
+			    	<li class="bold" data-nav_section="color styling">
+			    		<a class="collapsible-header waves-effect waves-blue">Color Styling <i class="tiny material-icons">arrow_drop_down</i></a>
+			    		<div id="color-generators" class="collapsible-body no-padding">
+			    			<ul>
+			    				<li class="bold" data-nav_page="gradient"><a href="<?php echo base_url();?>pages/gradient" class="waves-effect waves-blue">Gradient</a></li>
+			    			</ul>
+			    		</div>
+			    	</li>
 			    </ul>
 			</li>
 			<li class="bold" data-nav_page="change log"><a href="<?php echo base_url();?>pages/changelog" class="waves-effect waves-blue">Change Log</a></li>

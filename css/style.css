@@ -170,6 +170,18 @@ code{
 	}
 }
 
+#color-generators li a {
+	padding: 0 48px;
+	font-weight: 400;
+}
+
+@media only screen and (max-width : 992px) {
+	#color-generators li a {
+		padding: 0 32px;
+		font-weight: 400;
+	}
+}
+
 #nav-mobile ul.collapsible>li>a{
 	padding: 0 32px;
 }
@@ -582,7 +594,7 @@ footer{
 
 /* Transform END */
 
-/* Transform */
+/* Transition */
 
 .transition_preview{
 	width: 300px;
@@ -606,6 +618,14 @@ footer{
 }
 
 /* Transition END */
+
+/* Gradient */
+
+.gradient_preview{ 
+	background-color: inherit;
+}
+
+/* Gradient END */
 
 /* GENERATE BUTTON */
 

@@ -138,6 +138,19 @@
 			$this->load->view('transition');
 			$this->load->view('footer');
 		}
+
+		/* Color Styling Generators */
+
+		public function gradient()
+		{
+			$this->data['section']='gradient';
+			$this->data['presection']='color styling';
+			$this->load->view('head', $this->data);
+			$this->load->view('header', $this->data);
+			$this->load->view('nav', $this->data);
+			$this->load->view('gradient');
+			$this->load->view('footer');
+		}
 	}
 
 ?>
