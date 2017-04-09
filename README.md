@@ -36,7 +36,7 @@
   
 * Locate application/config/database.php
  
-      Setup database information(used only for change log on official website)
+      Setup database information(Used for changelog and gradient collection on official website)
   
 * Locate application/controllers/contact.php
     
