@@ -52,6 +52,15 @@ $(document).ready(function() {
 	    } : null;
 	}
 
+	/* ------------------------------------------------------------- Determine Font color Based on BG Color ------------------------------------------------------------- */
+
+	function determineFontColor(color) {
+			rgbcolor = hexToRgb(color);
+			rgb = [rgbcolor.r, rgbcolor.g, rgbcolor.b];
+			var o = Math.round(((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) / 1000);
+			return (o > 125) ? 1 : 0;	// 1 is black 0 is white
+		}
+
 	/* ------------------------------------------------------------- Stop scroll from changeing input values ------------------------------------------------------------- */
 
 	$(':input[type=number]').on('mousewheel', function(e){
@@ -865,5 +874,42 @@ $(document).ready(function() {
 				);
 				break;
 		}
+	}
+
+	/* -------------------------------------------------------------------- Gradient Collection -------------------------------------------------------------------- */
+
+	if (section==="gradient collection") {
+		$('.gradient_card').each(function () {
+			//console.log(determineFontColor($(this).attr('data-s-color')));
+			if( determineFontColor($(this).attr('data-s-color')) === 1){
+				console.log('black');
+				$(this).css({
+					'color': 'rgba(0,0,0,0.87)'
+				});
+			}
+			else{
+				console.log('white');
+				$(this).css({
+					'color': 'white'
+				});
+			}
+			$(this).css({
+				'background-color': $(this).attr('data-s-color'),
+				'background': "linear-gradient(to left, "+$(this).attr('data-s-color')+", "+$(this).attr('data-e-color')+")"
+			});
+		});
+
+		$(document).on('click','.generate_button_gradient', function () {
+			var s_color=$(this).parents('.gradient_card').attr('data-s-color');
+			var e_color=$(this).parents('.gradient_card').attr('data-e-color');
+
+			$('#generated_code_text').html(
+				'<code>background: '+s_color+';</span></br><span>background: -webkit-linear-gradient(to left, '+s_color
+				+', '+e_color+');</span></br><span>background: -moz-linear-gradient(to left, '+s_color
+				+', '+e_color+');</span></br><span>background: -o-linear-gradient(to left, '+s_color
+				+', '+e_color+');</span></br><span>background: linear-gradient(to left, '+s_color
+				+', '+e_color+');</span></code>'
+			);
+		})
 	}
 })

@@ -16,9 +16,7 @@
 
 	<!--JQuery CDN-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
 	
-
 	<script type="text/javascript">
 		base_url = '<?php echo base_url() ?>';
 		<?php

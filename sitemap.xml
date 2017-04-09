@@ -69,7 +69,7 @@
 </url>
 <url>
   <loc>https://cssgalore.petrovicstefan.rs/pages/changelog</loc>
-  <lastmod>2017-04-05</lastmod>
+  <lastmod>2017-04-09</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
@@ -78,5 +78,59 @@
   <lastmod>2017-03-30</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/30</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/60</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/210</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/90</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/120</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/180</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/gradientcollection/150</loc>
+  <lastmod>2017-04-09</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
 </url>
 </urlset>

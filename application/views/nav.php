@@ -40,6 +40,7 @@
 			    		<div id="color-generators" class="collapsible-body no-padding">
 			    			<ul>
 			    				<li class="bold" data-nav_page="gradient"><a href="<?php echo base_url();?>pages/gradient" class="waves-effect waves-blue">Gradient</a></li>
+			    				<li class="bold" data-nav_page="gradient collection"><a href="<?php echo base_url();?>pages/gradientcollection" class="waves-effect waves-blue">Gradient Collection</a></li>
 			    			</ul>
 			    		</div>
 			    	</li>

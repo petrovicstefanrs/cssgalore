@@ -17,8 +17,8 @@
 		{
 			$this->data['section']='home';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('home');
 			$this->load->view('footer');
 		}
@@ -27,8 +27,8 @@
 		{
 			$this->data['section']='about';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('about');
 			$this->load->view('footer');
 		}
@@ -42,8 +42,8 @@
 			$this->data['section']='change log';
 
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('changelog');
 			$this->load->view('footer');
 		}
@@ -65,8 +65,8 @@
 			$this->data['section']='multiple columns';
 			$this->data['presection']='text styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('multiplecolumns');
 			$this->load->view('footer');
 		}
@@ -76,8 +76,8 @@
 			$this->data['section']='text shadow';
 			$this->data['presection']='text styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('textshadow');
 			$this->load->view('footer');
 		}
@@ -89,8 +89,8 @@
 			$this->data['section']='outline';
 			$this->data['presection']='div styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('outline');
 			$this->load->view('footer');
 		}
@@ -100,8 +100,8 @@
 			$this->data['section']='border radius';
 			$this->data['presection']='div styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('borderradius');
 			$this->load->view('footer');
 		}
@@ -111,8 +111,8 @@
 			$this->data['section']='box shadow';
 			$this->data['presection']='div styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('boxshadow');
 			$this->load->view('footer');
 		}
@@ -122,8 +122,8 @@
 			$this->data['section']='transform';
 			$this->data['presection']='div styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('transform');
 			$this->load->view('footer');
 		}
@@ -133,8 +133,8 @@
 			$this->data['section']='transition';
 			$this->data['presection']='div styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('transition');
 			$this->load->view('footer');
 		}
@@ -146,12 +146,58 @@
 			$this->data['section']='gradient';
 			$this->data['presection']='color styling';
 			$this->load->view('head', $this->data);
-			$this->load->view('header', $this->data);
-			$this->load->view('nav', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
 			$this->load->view('gradient');
+			$this->load->view('footer');
+		}
+
+		public function gradientcollection()
+		{
+			$this->load->library('pagination');
+			$this->load->model('gradient_model');
+
+			$config['base_url'] = base_url().'pages/gradientcollection';
+			$config['total_rows'] = $this->gradient_model->getGradientNumber();
+			$config['per_page'] = 30;
+			$config['uri_segment'] = 3;
+			$config['num_links'] = 2;
+			$config['anchor_class'] = 'class="waves-effect waves-blue"';
+			$config['full_tag_open'] = '<ul class="pagination">';
+			$config['full_tag_close'] = '</ul>';
+			$config['first_link'] = 'First';
+			$config['first_tag_open'] = '<li class="waves-effect waves-blue"><a href="#!">';
+			$config['first_tag_close'] = '</a></li>';
+			$config['last_link'] = 'Last';
+			$config['last_tag_open'] = '<li class="waves-effect waves-blue">';
+			$config['last_tag_close'] = '</li>';
+			$config['next_link'] = '<i class="material-icons">chevron_right</i>';
+			$config['next_tag_open'] = '<li class="waves-effect waves-blue">';
+			$config['next_tag_close'] = '</li>';
+			$config['prev_link'] = '<i class="material-icons">chevron_left</i>';
+			$config['prev_tag_open'] = '<li class="waves-effect waves-blue">';
+			$config['prev_tag_close'] = '</li>';
+			$config['cur_tag_open'] = '<li class="active"><a href="#!">';
+			$config['cur_tag_close'] = '</a></li>';
+			$config['num_tag_open'] = '<li class="waves-effect waves-blue">';
+			$config['num_tag_close'] = '</li>';
+			
+			$this->pagination->initialize($config);
+			
+			$page= ($this->uri->segment(3)) ? intval($this->uri->segment(3)) : 0;
+
+			$this->data['gradients'] = $this->gradient_model->getGradients($config['per_page'],$page);
+			$this->data['pagination'] = $this->pagination->create_links();
+		
+			$this->data['section']='gradient collection';
+			$this->data['presection']='color styling';
+
+			$this->load->view('head', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
+			$this->load->view('gradientcollection');
 			$this->load->view('footer');
 		}
 	}
 
 ?>
-
