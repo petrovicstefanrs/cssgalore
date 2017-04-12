@@ -225,6 +225,17 @@
 			$this->load->view('footer');
 		}
 
+		public function pxem()
+		{
+			$this->data['section']='PX-EM converter';
+			$this->data['presection']='text styling';
+			$this->load->view('head', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
+			$this->load->view('pxem');
+			$this->load->view('footer');
+		}
+
 		// public function cssminify()
 		// {
 		// 	$this->data['section']='minify';

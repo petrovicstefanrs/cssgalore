@@ -975,4 +975,49 @@ $(document).ready(function() {
 	function capital(string) { 
 		return string.charAt(0).toUpperCase() + string.slice(1); 
 	}
+
+	/* -------------------------------------------------------------------- PX-EM Converter ------------------------------------------------------------------ */
+
+	$(document).on('focus','#pixel_size',function () {
+		$('#em_size').val("");
+	});
+
+	$(document).on('focus','#em_size',function () {
+		$('#pixel_size').val("");
+	});
+
+	$(document).on('click','#conv_pxem',function () {
+		convertpxem();
+	});
+
+
+	function convertpxem() {
+		
+		base = $('#base_size').val(); 
+		px = $('#pixel_size').val();
+		em = $('#em_size').val();
+
+		if (!base || base=="") {
+			$('#base_size').focus();
+		}
+		else{
+			if (!em || em=="") {
+				$('#em_size').val(pxtoem(base,px));
+				$('#em_size').focus();
+			}
+			if (!px || px=="") {
+				$('#pixel_size').val(emtopx(base,em));
+				$('#pixel_size').focus();
+			}
+		}
+
+	}
+
+	function pxtoem(base,px) {
+		return (px/base).toFixed(2);;
+	}
+
+	function emtopx(base,em) {
+		return (em*base).toFixed(2);;
+	}
 })

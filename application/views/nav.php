@@ -54,6 +54,7 @@
 						    			<ul>
 						    				<li class="bold" data-nav_page="text shadow"><a href="<?php echo base_url();?>pages/textshadow" class="waves-effect waves-blue">Text Shadow</a></li>
 						        			<li class="bold" data-nav_page="multiple columns"><a href="<?php echo base_url();?>pages/multiplecolumns" class="waves-effect waves-blue">Multiple Columns</a></li>
+						        			<li class="bold" data-nav_page="PX-EM converter"><a href="<?php echo base_url();?>pages/pxem" class="waves-effect waves-blue">PX-EM Converter</a></li>
 						    			</ul>
 						    		</div>
 						    	</li>
@@ -70,7 +71,6 @@
 						    		<a class="collapsible-header waves-effect waves-blue">CSS Tools <i class="tiny material-icons">arrow_drop_down</i></a>
 						    		<div id="css-tools" class="collapsible-body no-padding">
 						    			<ul>
-						    				<!-- <li class="bold" data-nav_page="minify"><a href="<?php echo base_url();?>pages/cssminify" class="waves-effect waves-blue">CSS Minifier</a></li> -->
 						    				<li class="bold" data-nav_page="lorem ipsum"><a href="<?php echo base_url();?>pages/loremipsum" class="waves-effect waves-blue">Lorem Ipsum</a></li>
 						    			</ul>
 						    		</div>
