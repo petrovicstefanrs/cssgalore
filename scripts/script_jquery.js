@@ -912,4 +912,67 @@ $(document).ready(function() {
 			);
 		})
 	}
+
+	/* -------------------------------------------------------------------- Lorem Ipsum Generator ------------------------------------------------------------------ */
+
+	$(document).on('click','#gen_loremipsum',function () {
+		
+		var parnum=$('#num_of_paragraphs').val();
+		var parlen=$('#len_of_paragraphs').val();
+
+		$.ajax({
+	    	type: 'POST',
+			url: base_url+'getwords',
+	    	dataType: "json",
+		    success: function( resp ) {
+		        //console.log( resp ); 
+		        i=0;
+		        output="";
+		        while(i<parnum){
+		        	output+=generateParagraph(parlen,resp)+"\n\r";
+		        	i++;
+		        	console.log(output);
+		        }
+
+		        $('#output_loremipsum').val(output).focus();
+		    }
+		});
+    
+	});
+
+	function generateParagraph(maxlen,words) {
+		if (maxlen==50) {
+			minlen=10;
+		}
+		else{
+			minlen=maxlen-50;
+		}
+		numwords=randomIntFromInterval(minlen,maxlen); // Random number of words in this paragraph based on max len and maxlen-100(minlen)
+		allwords=words.length-1;	// Num of words in dbase
+		paragraph="";	// Starting paragraph
+		numsent=randomIntFromInterval(3,7); // Number of sentences in paragraph
+		j=0;
+
+		while(j<numsent){
+			numwordssen=randomIntFromInterval(Math.floor(minlen/3),Math.floor(numwords/3)); // Number of words in sentence
+			sentence="";	// Starting sentence
+			for (var i = 0; i < numwordssen; i++) {
+				sentence+=words[randomIntFromInterval(0,allwords)].word+" ";
+			}
+			sentence=capital(sentence).trim()+". ";
+			paragraph+=sentence;
+			j++;
+		}
+		
+		return paragraph;
+	}
+
+	function randomIntFromInterval(min,max)
+	{
+	    return Math.floor(Math.random()*(max-min+1)+min);
+	}
+
+	function capital(string) { 
+		return string.charAt(0).toUpperCase() + string.slice(1); 
+	}
 })

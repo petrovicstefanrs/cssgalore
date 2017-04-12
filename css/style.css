@@ -220,6 +220,18 @@ code{
 .side-nav li.active>a>i {
     color: white !important;
 }
+
+#css-tools li a {
+	padding: 0 48px;
+	font-weight: 400;
+}
+
+@media only screen and (max-width : 992px) {
+	#css-tools li a {
+		padding: 0 32px;
+		font-weight: 400;
+	}
+}
 /* MENU END */
 
 /* TOP NAV BAR */
@@ -712,3 +724,57 @@ footer{
 }
 
 /* GENERATE BUTTON END */
+
+/* ADMIN PANEL */
+
+.login_button{
+   	background-color: #3F51B5 !important;
+}
+
+.validation_msg{
+	background: #3f51b5;
+    padding: 10px 0 !important;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.validation_msg>i{
+	padding-right: 20px;
+}
+
+/* ADMIN PANEL END */
+
+/* Sitemap */
+	
+.sitemap_section{
+	width: 90%;
+	font-size: 18px;
+	font-weight: 800;
+	text-align: left !important;
+}
+
+.sitemap_subsection{
+	width: 90%;
+	font-size: 12px;
+	font-weight: 400;
+	background-color: #3F51B5 !important;
+	text-align: left !important; 
+}
+
+/* Sitemap END */
+
+/* Loremipsum */
+
+.materialize-textarea.lorem_textarea{
+	height: 250px !important;
+	overflow-y: auto !important;
+}
+
+.btn_loremipsum{
+	background-color: #3F51B5 !important;
+}
+
+
+/* Loremipsum END */

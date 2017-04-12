@@ -198,6 +198,43 @@
 			$this->load->view('gradientcollection');
 			$this->load->view('footer');
 		}
+
+		public function sitemap()
+		{
+			$this->load->model('sitemap_model');
+			$this->data['sections'] = $this->sitemap_model->getSections();
+			$this->data['subsections'] = $this->sitemap_model->getSubSections();
+		
+			$this->data['section']='sitemap';
+
+			$this->load->view('head', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
+			$this->load->view('sitemap');
+			$this->load->view('footer');
+		}
+
+		public function loremipsum()
+		{
+			$this->data['section']='lorem ipsum';
+			$this->data['presection']='css tools';
+			$this->load->view('head', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
+			$this->load->view('loremipsum');
+			$this->load->view('footer');
+		}
+
+		// public function cssminify()
+		// {
+		// 	$this->data['section']='minify';
+		// 	$this->data['presection']='css tools';
+		// 	$this->load->view('head', $this->data);
+		// 	$this->load->view('header');
+		// 	$this->load->view('nav');
+		// 	$this->load->view('cssminify');
+		// 	$this->load->view('footer');
+		// }
 	}
 
 ?>

@@ -68,8 +68,20 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/loremipsum</loc>
+  <lastmod>2017-04-12</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://cssgalore.petrovicstefan.rs/pages/changelog</loc>
-  <lastmod>2017-04-09</lastmod>
+  <lastmod>2017-04-12</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/sitemap</loc>
+  <lastmod>2017-04-12</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
