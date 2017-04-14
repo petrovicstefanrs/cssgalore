@@ -80,14 +80,20 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://cssgalore.petrovicstefan.rs/pages/cssminify</loc>
+  <lastmod>2017-04-14</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://cssgalore.petrovicstefan.rs/pages/changelog</loc>
-  <lastmod>2017-04-12</lastmod>
+  <lastmod>2017-04-14</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cssgalore.petrovicstefan.rs/pages/sitemap</loc>
-  <lastmod>2017-04-12</lastmod>
+  <lastmod>2017-04-14</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>

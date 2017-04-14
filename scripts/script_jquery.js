@@ -1020,4 +1020,39 @@ $(document).ready(function() {
 	function emtopx(base,em) {
 		return (em*base).toFixed(2);;
 	}
+
+	/* -------------------------------------------------------------------- CSS Minifier ------------------------------------------------------------------ */
+
+	$(document).on('click','#input_css_btn',function () {
+		$css=$('#input_css').val();
+		minifycss($css);
+	});
+
+	$(document).on('click','#btn_download_minify',function (e) {
+		e.preventDefault();
+	    form = $('#minify_form');
+	    form.submit();
+	});
+
+	function minifycss(css) {
+		if (!css || css=="") {
+			$('#output_css').val('You have to insert your CSS first.').focus().select();
+		}
+		else{
+			
+			$.ajax({
+				type: 'POST',
+		        url: base_url+'getminifiedcss',
+		        data: {
+		        	css : css
+		        },
+		        dataType: 'text',
+		        success: function (resp){
+		        	$('#output_css').val(resp).focus().select();
+		        	$('#btn_copy_minify').removeClass("disabled");
+		        	$('#btn_download_minify').removeClass("disabled");
+			    }
+			}); 
+		}
+	}
 })

@@ -72,11 +72,13 @@
 						    		<div id="css-tools" class="collapsible-body no-padding">
 						    			<ul>
 						    				<li class="bold" data-nav_page="lorem ipsum"><a href="<?php echo base_url();?>pages/loremipsum" class="waves-effect waves-blue">Lorem Ipsum</a></li>
+						    				<li class="bold" data-nav_page="CSS Minifier"><a href="<?php echo base_url();?>pages/cssminify" class="waves-effect waves-blue">Minify CSS</a></li>
 						    			</ul>
 						    		</div>
 						    	</li>
 						    </ul>
 						</li>
+						<li class="bold" data-nav_page="sitemap"><a href="<?php echo base_url();?>pages/sitemap" class="waves-effect waves-blue">Sitemap</a></li>
 						<li class="bold" data-nav_page="change log"><a href="<?php echo base_url();?>pages/changelog" class="waves-effect waves-blue">Change Log</a></li>
 						<li class="bold" data-nav_page="contact"><a href="<?php echo base_url();?>pages/contact" class="waves-effect waves-blue">Contact</a></li>
 					<?php

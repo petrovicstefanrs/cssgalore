@@ -776,5 +776,17 @@ footer{
 	background-color: #3F51B5 !important;
 }
 
-
 /* Loremipsum END */
+
+/* Minify */
+
+.materialize-textarea.minify_textarea{
+	height: 250px !important;
+	overflow-y: auto !important;
+}
+
+.btn_minify{
+	background-color: #3F51B5 !important;
+}
+
+/* Minify */
