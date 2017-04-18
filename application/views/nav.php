@@ -79,6 +79,7 @@
 						    	</li>
 						    </ul>
 						</li>
+						<li class="bold" data-nav_page="desktop application"><a href="<?php echo base_url();?>pages/nativeapp" class="waves-effect waves-blue">Desktop Application</a></li>
 						<li class="bold" data-nav_page="sitemap"><a href="<?php echo base_url();?>pages/sitemap" class="waves-effect waves-blue">Sitemap</a></li>
 						<li class="bold" data-nav_page="change log"><a href="<?php echo base_url();?>pages/changelog" class="waves-effect waves-blue">Change Log</a></li>
 						<li class="bold" data-nav_page="contact"><a href="<?php echo base_url();?>pages/contact" class="waves-effect waves-blue">Contact</a></li>

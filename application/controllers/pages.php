@@ -257,6 +257,16 @@
 			$this->load->view('cssminify');
 			$this->load->view('footer');
 		}
+
+		public function nativeapp()
+		{
+			$this->data['section']='desktop application';
+			$this->load->view('head', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
+			$this->load->view('nativeapp');
+			$this->load->view('footer');
+		}
 	}
 
 ?>

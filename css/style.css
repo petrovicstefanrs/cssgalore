@@ -35,6 +35,17 @@ h1 span.bold{
 	font-weight: 800;
 }
 
+.blackheader{
+	color: rgba(0,0,0,0.87) !important;
+	font-weight: 100 !important;
+	padding: 50px 0;
+}
+
+h2 span.bold{
+	color: #3F51B5;
+	font-weight: 800;
+}
+
 h2{
 	font-size: 1.64rem !important;
     line-height: 110% !important;
@@ -45,7 +56,7 @@ h2{
 	width: 60%;
 }
 
-.valign-wrapper{
+.wrapthatflex{
 	flex-wrap: wrap !important;
 }
 
