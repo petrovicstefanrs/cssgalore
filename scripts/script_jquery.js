@@ -40,6 +40,14 @@ $(document).ready(function() {
 		$('li[data-nav_section="'+presection+'"]').addClass('active');
 	}
 
+	/* ------------------------------------------------------------- URL Checker function --------------------------------------------------------------------------------- */
+
+	function isURL(str) {
+     	var urlRegex = '^(?!mailto:)(?:(?:http|https|ftp)://)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$';
+     	var url = new RegExp(urlRegex, 'i');
+     	return str.length < 2083 && url.test(str);
+	}
+
 	/* ------------------------------------------------------------- Hex Color to RGB Color Converter ------------------------------------------------------------------- */
 	
 	function hexToRgb(hex) {
@@ -100,11 +108,23 @@ $(document).ready(function() {
 
 	/* --------------------------------------------------------- Hide nonactive choices for transition generator -----------------------------------------------------------*/
 
-	$('#transition_field_height, #transition_field_width, #transition_field_bgcolor, #transition_field_opacity').hide();
+	$("[id^=transition_field_]").hide();
+
+	$('#transition_field_'+$('#transition_transition_property').val()).show();	// All options are hidden by default this shows active option
+
+
+	/* --------------------------------------------------------- Hide nonactive choices for filter generator -----------------------------------------------------------*/
+
+	$("[id^=field_filter_]").hide();
+
+	$('#field_filter_'+$('#filter_function').val()).show();	// All options are hidden by default this shows active option
 
 	/* --------------------------------------------------------- Hide nonactive choices for gradient generator -----------------------------------------------------------*/
 
-	$('#gradient_field_linear, #gradient_field_radial').hide();
+	$("[id^=gradient_field_]").hide();
+
+	$('#gradient_field_'+$('#gradient_style').val()).show();	// All options are hidden by default this shows active option
+
 
 	/* -------------------------------------------------------------------- Miltiple columns Generator -------------------------------------------------------------------- */
 
@@ -582,8 +602,6 @@ $(document).ready(function() {
 
 	/* -------------------------------------------------------------------- Transition Generator -------------------------------------------------------------------- */
 
-	$('#transition_field_'+$('#transition_transition_property').val()).show();	// All options are hidden by default this shows active option
-
 	$(document).on('change', '#transition_transition_property', function () { 	// Show chosen options hide others
 		$("[id^=transition_field_]").hide();
 		$('#transition_field_'+$(this).val()).show();
@@ -780,8 +798,6 @@ $(document).ready(function() {
 
 	/* -------------------------------------------------------------------- Gradient Generator -------------------------------------------------------------------- */
 
-	$('#gradient_field_'+$('#gradient_style').val()).show();	// All options are hidden by default this shows active option
-
 	$(document).on('change', '#gradient_style', function () { 	// Show chosen options hide others
 		$("[id^=gradient_field_]").hide();
 		$('#gradient_field_'+$(this).val()).show();
@@ -798,7 +814,7 @@ $(document).ready(function() {
 	$(document).on('change','#gradient_end_color_linear',function () {
 		getGradient();
 	});
-	$(document).on('mousemove','#gradient_angle',function () {
+	$(document).on('mousemove change','#gradient_angle',function () {
 		getGradient();
 	});
 	$(document).on('change','#gradient_start_color_radial',function () {
@@ -807,10 +823,10 @@ $(document).ready(function() {
 	$(document).on('change','#gradient_end_color_radial',function () {
 		getGradient();
 	});
-	$(document).on('mousemove','#gradient_start_size',function () {
+	$(document).on('mousemove change','#gradient_start_size',function () {
 		getGradient();
 	});
-	$(document).on('mousemove','#gradient_end_size',function () {
+	$(document).on('mousemove change','#gradient_end_size',function () {
 		getGradient();
 	});
 
@@ -1053,6 +1069,151 @@ $(document).ready(function() {
 		        	$('#btn_download_minify').removeClass("disabled");
 			    }
 			}); 
+		}
+	}
+
+	/* -------------------------------------------------------------------- Filter Generator -------------------------------------------------------------------- */
+
+	$(document).on('change', '#filter_function', function () { 	// Show chosen options hide others
+		$("[id^=field_filter_]").hide();
+		$('#field_filter_'+$(this).val()).show();
+		getFilter();
+	});
+
+	$(document).on('click','#submit_url_filter', function () {
+		var imgurl= $('#img_url_ta').val();
+		imgurl = imgurl.replace(/(^\w+:|^)\/\//, '');
+		imgurl = "http://"+imgurl;
+		if (isURL(imgurl)) {
+			$('#img_url_ta').addClass('valid');
+			$('#filter_preview_img').attr("src",imgurl);
+			getFilter();
+		}
+		else{
+			$('#img_url_ta').addClass('invalid');
+		}
+	});
+
+	$(document).on('keyup', '#filter_blur_value', function () { 
+		getFilter();
+	});
+	$(document).on('keyup', '#filter_brightness_value', function () { 
+		getFilter();
+	});
+	$(document).on('keyup', '#filter_contrast_value', function () { 
+		getFilter();
+	});
+	$(document).on('mousemove change', '#filter_grayscale_value', function () { 	
+		getFilter();
+	});
+	$(document).on('mousemove change', '#filter_hue-rotate_value', function () { 	
+		getFilter();
+	});
+	$(document).on('mousemove change', '#filter_invert_value', function () { 	
+		getFilter();
+	});
+	$(document).on('mousemove change', '#filter_opacity_value', function () { 	
+		getFilter();
+	});
+	$(document).on('keyup', '#filter_saturate_value', function () { 	
+		getFilter();
+	});
+	$(document).on('mousemove change', '#filter_sepia_value', function () { 	
+		getFilter();
+	});
+
+	/*drop shadow filter*/
+
+	$(document).on('keyup', '#filter_drop-shadow_h', function () { 	
+		getFilter();
+	});
+	$(document).on('keyup', '#filter_drop-shadow_v', function () { 	
+		getFilter();
+	});
+	$(document).on('keyup', '#filter_drop-shadow_blur', function () { 	
+		getFilter();
+	});
+	$(document).on('change', '#filter_drop-shadow_color', function () { 	
+		getFilter();
+	});
+
+	function getFilter() {
+		var filter_flag=$('#filter_function').val();	
+		if (filter_flag!="drop-shadow") {
+			filter_val=$('#filter_'+filter_flag+"_value").val();
+			setFilter(filter_val,filter_flag);
+		}
+		else{
+			dsh=$('#filter_'+filter_flag+"_h").val();
+			if (!dsh) {
+				dsh=0;
+			}
+			dsv=$('#filter_'+filter_flag+"_v").val();
+			if (!dsv) {
+				dsv=0;
+			}
+			dsb=$('#filter_'+filter_flag+"_blur").val();
+			if (!dsb) {
+				dsb=0;
+			}
+			dsc=$('#filter_'+filter_flag+"_color").val();
+
+			setFilter(null,filter_flag,dsh,dsv,dsb,dsc);
+		}
+	}
+
+	function setFilter(val="",flag,ds_h=0,ds_v=0,ds_b=0,ds_c="#000") {
+		switch (flag){
+			case "hue-rotate":
+				csscode=flag+"("+val+"deg)";
+				break;
+			case "blur":
+				csscode=flag+"("+val+"px)";
+				break;
+			case "grayscale":
+			case "invert":
+			case "opacity":
+			case "saturate":
+			case "sepia":
+			case "contrast":
+			case "brightness":
+				csscode=flag+"("+val+"%)";
+				break;
+			case "drop-shadow":
+				csscode=flag+"("+ds_h+"px "+ds_v+"px "+ds_b+"px "+ds_c+")";
+				break;
+		}
+
+		if (val=="" && flag!="drop-shadow") {
+			$('.filter_preview').css({
+				'-webkit-filter': '',
+				'filter': ''
+			});
+
+			$('#generated_code_text').html(
+				'There is no generated code'
+			);
+		}
+		else if(ds_h==0 && ds_v==0 && ds_b==0 && flag=="drop-shadow"){
+			$('.filter_preview').css({
+				'-webkit-filter': '',
+				'filter': ''
+			});
+
+			$('#generated_code_text').html(
+				'There is no generated code'
+			);
+		}
+		else{
+			$('.filter_preview').css({
+				'-webkit-filter': csscode,
+				'filter': csscode
+			});
+
+			$('#generated_code_text').html(
+				'<code><span>-webkit-filter:'+csscode
+				+';</span></br><span>filter:'+csscode+';</span></br>'
+			);
 		}
 	}
 })

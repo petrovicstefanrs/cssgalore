@@ -45,6 +45,7 @@
 						        			<li class="bold" data-nav_page="outline"><a href="<?php echo base_url();?>pages/outline" class="waves-effect waves-blue">Outline</a></li>
 						        			<li class="bold" data-nav_page="transform"><a href="<?php echo base_url();?>pages/transform" class="waves-effect waves-blue">Transform</a></li> 
 						        			<li class="bold" data-nav_page="transition"><a href="<?php echo base_url();?>pages/transition" class="waves-effect waves-blue">Transition</a></li>
+						        			<li class="bold" data-nav_page="filters"><a href="<?php echo base_url();?>pages/filters" class="waves-effect waves-blue">Filters</a></li>
 						    			</ul>
 						    		</div>
 						    	</li>

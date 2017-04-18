@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
   </a>
   <a href="https://github.com/petrovicstefanrs/cssgalore/releases" target="_blank">
-    <img src="https://img.shields.io/badge/version-0.13.0-f39f37.svg" alt="Version">
+    <img src="https://img.shields.io/badge/version-0.14.1-f39f37.svg" alt="Version">
   </a>
 </p>
 

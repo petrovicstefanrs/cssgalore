@@ -225,6 +225,17 @@
 			$this->load->view('footer');
 		}
 
+		public function filters()
+		{
+			$this->data['section']='filters';
+			$this->data['presection']='div styling';
+			$this->load->view('head', $this->data);
+			$this->load->view('header');
+			$this->load->view('nav');
+			$this->load->view('filters');
+			$this->load->view('footer');
+		}
+
 		public function pxem()
 		{
 			$this->data['section']='PX-EM converter';

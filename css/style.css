@@ -45,6 +45,10 @@ h2{
 	width: 60%;
 }
 
+.valign-wrapper{
+	flex-wrap: wrap !important;
+}
+
 /* DISABLE NUMBER SPINNERS */
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -790,3 +794,21 @@ footer{
 }
 
 /* Minify */
+
+/* FILTER */
+
+.filter_preview{
+	width: 100%;
+	overflow: hidden;
+	min-height: 200px;
+	max-height: 400px;
+	text-align: center;
+}
+
+.filter_preview>img{
+	min-height: 200px;
+	max-height: 400px;
+	width: auto;
+}
+
+/* FILTER END */
