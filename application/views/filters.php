@@ -11,7 +11,7 @@
 			    		</div>
 			    	</div>
 			    	<div class="row"></div>
-					<div class="row valign-wrapper">
+					<div class="row valign-wrapper wrapthatflex">
 						<div class="input-field col l4 s12">
 							<select id="filter_function">
 								<option value="blur" selected>Blur</option>
@@ -221,6 +221,7 @@
 											</div>
 											<div class="modal-footer">
 												<a href="#!" class="modal-action waves-effect waves-green btn-flat copybtn" data-clipboard-target="#generated_code_text">Copy</a>
+												<a href="#!" id="saveasgist" class="modal-action waves-effect waves-green btn-flat copybtn">Save CSS as GIST&nbsp<i class="fa fa-github" aria-hidden="true"></i></a>
 											</div>
 										</div>
 		                        	</div>

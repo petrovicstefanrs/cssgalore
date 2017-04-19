@@ -126,6 +126,39 @@ $(document).ready(function() {
 	$('#gradient_field_'+$('#gradient_style').val()).show();	// All options are hidden by default this shows active option
 
 
+	/* -------------------------------------------------------------------- Save as GIST -------------------------------------------------------------------- */
+
+	$(document).on('click','#saveasgist',function (e) {
+		e.preventDefault();
+	    var text = $('#generated_code_text').html();
+	    text = text.replace(/(\<code\>)|(\<\/code\>)|(\<span\>)|(\<\/span\>)/g,'');
+	    text = text.replace(/(\<br\>)|(\<\/br\>)/g,'\n');
+		var data = {
+			"description": "CSS Galore - Generated "+section+" CSS Code",
+			"public": true,
+			"files": {
+			    "cssgalore.css": {
+			    	"content": text
+			    }
+			}
+		}
+	    $.ajax({
+	        url: 'https://api.github.com/gists',
+	        type: 'POST',
+	        dataType: 'json',
+	        async: false,
+	        data: JSON.stringify(data),
+	        success: function (resp){
+	        	var opentab = window.open('', '_blank');
+	        	opentab.location = resp.html_url;
+	        	opentab.focus();
+		    },
+		    fail: function (resp) {
+		    	Materialize.toast("An error occured, try again! Error: "+resp, 4000);
+		    }
+	    });
+	});
+
 	/* -------------------------------------------------------------------- Miltiple columns Generator -------------------------------------------------------------------- */
 
 	$(document).on('keyup','#num_of_columns',function () {
