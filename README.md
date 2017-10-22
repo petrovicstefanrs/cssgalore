@@ -26,6 +26,14 @@
 
 ---
 
+## Conribute:
+
+---
+
+<p align="center">You can contrbute by proposing new ideas, fixing bugs you found or working on desktop apps.</p>
+
+---
+
 ## How to use:
 
 <p>You can either:</p>
